@@ -1,5 +1,6 @@
 package ec.cgp;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -39,6 +40,18 @@ public class Evaluator {
 
 	/** functions are loaded during setup. */
 	public static Functions functions;
+	
+	
+	static IntegerVectorIndividual test;
+	
+	/**
+	 * tracks active nodes within the genome
+	 */
+	static ArrayList<Integer> activeNodes = new ArrayList<Integer>();
+
+	public static ArrayList<Integer> getActiveNodes() {
+		return activeNodes;
+	}
 
 	/**
 	 * Evaluate the genome against the given inputs. If ind.expression is null,
@@ -77,6 +90,14 @@ public class Evaluator {
 			sb = new StringBuffer();
 		}
 		/** Evaluate results for each output node. */
+		//HENRI...
+		System.out.println("ind");
+		System.out.println(ind);
+		if(ind instanceof IntegerVectorIndividual) {
+			test = (IntegerVectorIndividual)ind;
+			System.out.println(test.genotypeToStringForHumans());
+		}
+		//...HENRI
 		for (int i = 0; i < outputs.length; i++) {
 			add(expression, sb, "o" + i + " = ");
 			outputs[i] = evalNode(threadNum, expression, inputs, sb, ind
@@ -86,6 +107,14 @@ public class Evaluator {
 
 		if (expression)
 			ind.expression = sb;
+		
+
+		//HENRI...
+		System.out.println("aktive Knoten:");
+		for (int i = 0; i < activeNodes.size(); i++) {
+			System.out.print(activeNodes.get(i) + "; ");
+		}
+		//...HENRI
 		
 		return outputs;
 	}
@@ -112,6 +141,16 @@ public class Evaluator {
 	private static Object evalNode(int threadNum, boolean expression,
 			Object[] inputs, StringBuffer expr, Object genome, int nodeNum,
 			VectorSpeciesCGP s) {
+		//HENRI...
+		System.out.println("nodeNum");
+		System.out.println(nodeNum);
+		//...HENRI
+		/**
+		 * adds nodes to track active Nodes
+		 */
+		if(!activeNodes.contains(nodeNum))
+			activeNodes.add(nodeNum);
+		
 		Object val = nodeMap.get(threadNum).get(nodeNum);
 		if (val != null) { /* We've already computed this node. */
 			if (expression) /* append the already-computed expression string. */
@@ -147,7 +186,18 @@ public class Evaluator {
 			if (isFloat) {
 				argFloat = ((float[]) genome)[pos + i + 1];
 			} else {
+				//HENRI...
+				System.out.println("pos+i");
+				System.out.println(pos);
+				System.out.println(i);
+				//...Henri
 				argInt = ((int[]) genome)[pos + i + 1];
+				//HENRI...
+				System.out.println("index");
+				System.out.println(pos+i+1);
+				System.out.println("argInt");
+				System.out.println(argInt);
+				//...HENRI
 			}
 
 			int num = isFloat ? s.interpretFloat(pos + i + 1, (float[]) genome)
