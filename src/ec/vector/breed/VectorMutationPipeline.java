@@ -9,6 +9,8 @@ package ec.vector.breed;
 
 import ec.vector.*;
 import ec.*;
+import ec.cgp.Evaluator;
+import ec.cgp.representation.VectorIndividualCGP;
 import ec.util.*;
 
 import java.util.ArrayList;
@@ -46,6 +48,7 @@ public class VectorMutationPipeline extends BreedingPipeline
     {
     public static final String P_MUTATION = "mutate";
     public static final int NUM_SOURCES = 1;
+    
 
     public Parameter defaultBase() { return VectorDefaults.base().push(P_MUTATION); }
     
@@ -71,11 +74,22 @@ public class VectorMutationPipeline extends BreedingPipeline
             return n;
             }
 
+        
         // else mutate 'em
         for(int q=start;q<n+start;q++)
             {
-            ((VectorIndividual)inds.get(q)).defaultMutate(state,thread);
-            ((VectorIndividual)inds.get(q)).evaluated=false;
+            //HENRI...
+        		if(inds.get(q).getClass() == ec.cgp.representation.IntegerVectorIndividual.class) {
+        			Object[] temp = Evaluator.evaluate(state, thread, INPUTS, (VectorIndividualCGP) inds.get(q));
+            		((ec.cgp.representation.IntegerVectorIndividual)inds.get(q)).advancedMutate(state,thread, Evaluator.getActiveNodes());
+            		((ec.cgp.representation.IntegerVectorIndividual)inds.get(q)).evaluated=false;
+        		}
+        		else {
+
+                    //...HENRI
+            		((VectorIndividual)inds.get(q)).defaultMutate(state,thread);
+            		((VectorIndividual)inds.get(q)).evaluated=false;
+        		}
             }
 
         return n;

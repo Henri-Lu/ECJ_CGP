@@ -140,6 +140,7 @@ public class Evaluator {
 	 * TODO: factor out all the float-vs-int checks to speed up evaluation.
 	 * 
 	 */
+	
 	private static Object evalNode(int threadNum, boolean expression,
 			Object[] inputs, StringBuffer expr, Object genome, int nodeNum,
 			VectorSpeciesCGP s) {
@@ -151,6 +152,7 @@ public class Evaluator {
 		//...HENRI
 		/**
 		 * adds nodes to track active Nodes
+		 * HENRI
 		 */
 		if(!activeNodes.contains(nodeNum))
 			activeNodes.add(nodeNum);
