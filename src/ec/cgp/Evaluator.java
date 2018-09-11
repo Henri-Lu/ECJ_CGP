@@ -91,12 +91,12 @@ public class Evaluator {
 		}
 		/** Evaluate results for each output node. */
 		//HENRI...
-		System.out.println("ind");
-		System.out.println(ind);
-		if(ind instanceof IntegerVectorIndividual) {
-			test = (IntegerVectorIndividual)ind;
-			System.out.println(test.genotypeToStringForHumans());
-		}
+		//System.out.println("ind");
+		//System.out.println(ind);
+		//if(ind instanceof IntegerVectorIndividual) {
+		//	test = (IntegerVectorIndividual)ind;
+		//	System.out.println(test.genotypeToStringForHumans());
+		//}
 		//...HENRI
 		for (int i = 0; i < outputs.length; i++) {
 			add(expression, sb, "o" + i + " = ");
@@ -110,10 +110,12 @@ public class Evaluator {
 		
 
 		//HENRI...
+		/*
 		System.out.println("aktive Knoten:");
 		for (int i = 0; i < activeNodes.size(); i++) {
 			System.out.print(activeNodes.get(i) + "; ");
 		}
+		*/
 		//...HENRI
 		
 		return outputs;
@@ -142,8 +144,10 @@ public class Evaluator {
 			Object[] inputs, StringBuffer expr, Object genome, int nodeNum,
 			VectorSpeciesCGP s) {
 		//HENRI...
+		/*
 		System.out.println("nodeNum");
 		System.out.println(nodeNum);
+		*/
 		//...HENRI
 		/**
 		 * adds nodes to track active Nodes
@@ -187,16 +191,20 @@ public class Evaluator {
 				argFloat = ((float[]) genome)[pos + i + 1];
 			} else {
 				//HENRI...
+				/*
 				System.out.println("pos+i");
 				System.out.println(pos);
 				System.out.println(i);
+				*/
 				//...Henri
 				argInt = ((int[]) genome)[pos + i + 1];
 				//HENRI...
+				/*
 				System.out.println("index");
 				System.out.println(pos+i+1);
 				System.out.println("argInt");
 				System.out.println(argInt);
+				*/
 				//...HENRI
 			}
 
