@@ -8,6 +8,8 @@
 package ec;
 import ec.util.Parameter;
 import java.io.*;
+import java.util.ArrayList;
+
 import ec.util.*;
 
 /*
@@ -85,11 +87,23 @@ public abstract class Individual implements Prototype, Comparable
 
     /** The species of the Individual.*/
     public Species species;
-    
-    /** Has the individual been evaluated and its fitness determined yet? */
-    public boolean evaluated;
 
-    public Object clone()
+	/** Has the individual been evaluated and its fitness determined yet? */
+    public boolean evaluated;
+    
+    public ArrayList<Integer> activeNodes = new ArrayList<Integer>();
+
+    public ArrayList<Integer> getActiveNodes() {
+		return activeNodes;
+	}
+    
+    public void setActiveNodes(ArrayList<Integer> activeNodes) {
+		this.activeNodes = activeNodes;
+	}
+
+
+
+	public Object clone()
         {
         try 
             { 

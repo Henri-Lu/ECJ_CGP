@@ -57,13 +57,15 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 				}
 
 	}
-
-	public void advancedMutate(EvolutionState state, int thread, ArrayList<Integer> Nodes) {
+	/**
+	 *mutates active Nodes
+	 */
+	public void activeMutate(EvolutionState state, int thread) {
 		IntegerVectorSpecies s = (IntegerVectorSpecies) species;
 		if (s.mutationProbability[0] > 0.0)
 			for (int x = 0; x < genome.length; x++)
 				if (state.random[thread].nextBoolean(s.mutationProbability[0])) {
-					if(Nodes.contains(x))
+					if(this.getActiveNodes().contains(x))
 					{
 						genome[x] = randomValueFromClosedInterval(0, s
 							.computeMaxGene(x, genome), state.random[thread]);

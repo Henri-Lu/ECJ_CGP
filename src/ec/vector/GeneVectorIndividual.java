@@ -265,6 +265,36 @@ public class GeneVectorIndividual extends VectorIndividual
                 }
             }
         }
+    
+    public void activeMutate(EvolutionState state, int thread) {
+        GeneVectorSpecies s = (GeneVectorSpecies) species;
+        for(int x=0;x<genome.length;x++)
+            {
+            if(this.getActiveNodes().contains(x))
+        		{
+            	if (state.random[thread].nextBoolean(s.mutationProbability(x)))
+                	{
+            		if (s.duplicateRetries(x) <= 0)  // a little optimization
+            		{
+            			genome[x].mutate(state,thread);
+                    	}
+            		else    // argh
+            			{
+            			Gene old = (Gene)(genome[x].clone());
+            			for(int retries = 0; retries < s.duplicateRetries(x) + 1; retries++)
+            				{
+            				genome[x].mutate(state,thread);
+            				if (!genome[x].equals(old)) break;
+            				else genome[x] = old;  // try again.  Note that we're copying back just in case.
+            				}
+                        
+            			}
+                	}
+        		}
+        	}
+    	
+    	
+    }
 
     /** Initializes the individual by calling reset(...) on each gene. */
     public void reset(EvolutionState state, int thread)

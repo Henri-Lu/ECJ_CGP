@@ -78,22 +78,22 @@ public class VectorMutationPipeline extends BreedingPipeline
         // else mutate 'em
         for(int q=start;q<n+start;q++)
             {
-            //HENRI...
-        		if(inds.get(q).getClass() == ec.cgp.representation.IntegerVectorIndividual.class) {
-        			Object[] temp = Evaluator.evaluate(state, thread, INPUTS, (VectorIndividualCGP) inds.get(q));
-            		((ec.cgp.representation.IntegerVectorIndividual)inds.get(q)).advancedMutate(state,thread, Evaluator.getActiveNodes());
-            		((ec.cgp.representation.IntegerVectorIndividual)inds.get(q)).evaluated=false;
-        		}
-        		else {
-
-                    //...HENRI
-            		((VectorIndividual)inds.get(q)).defaultMutate(state,thread);
-            		((VectorIndividual)inds.get(q)).evaluated=false;
-        		}
+            		advancedMutate((VectorIndividual) inds.get(q), state, thread);
             }
 
         return n;
         }
+    
+    
+    	private void advancedMutate(VectorIndividual ind, EvolutionState tempState, int tempThread) {
+    		ind.activeMutate(tempState, tempThread);
+    		ind.evaluated = false;
+    	}
+    	
+    	private void defaultMutate(VectorIndividual ind, EvolutionState tempState, int tempThread) {
+    		ind.defaultMutate(tempState, tempThread);
+    		ind.evaluated = false;
+    	}
 
     }
     

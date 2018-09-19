@@ -47,11 +47,7 @@ public class Evaluator {
 	/**
 	 * tracks active nodes within the genome
 	 */
-	static ArrayList<Integer> activeNodes = new ArrayList<Integer>();
-
-	public static ArrayList<Integer> getActiveNodes() {
-		return activeNodes;
-	}
+    private static ArrayList<Integer> tempActiveNodes = new ArrayList<Integer>();
 
 	/**
 	 * Evaluate the genome against the given inputs. If ind.expression is null,
@@ -104,6 +100,8 @@ public class Evaluator {
 					.getGenome(), isFloat ? s.interpretFloat(gf.length - 1 - i,
 					gf) : gi[gi.length - 1 - i], s);
 		}
+		ind.setActiveNodes(tempActiveNodes);
+		tempActiveNodes.clear();
 
 		if (expression)
 			ind.expression = sb;
@@ -154,8 +152,8 @@ public class Evaluator {
 		 * adds nodes to track active Nodes
 		 * HENRI
 		 */
-		if(!activeNodes.contains(nodeNum))
-			activeNodes.add(nodeNum);
+		if(!tempActiveNodes.contains(nodeNum))
+			tempActiveNodes.add(nodeNum);
 		
 		Object val = nodeMap.get(threadNum).get(nodeNum);
 		if (val != null) { /* We've already computed this node. */
