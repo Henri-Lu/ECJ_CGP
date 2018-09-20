@@ -2,6 +2,7 @@ package ec.cgp.representation;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import ec.EvolutionState;
 import ec.util.MersenneTwisterFast;
@@ -62,15 +63,42 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 	 */
 	public void activeMutate(EvolutionState state, int thread) {
 		IntegerVectorSpecies s = (IntegerVectorSpecies) species;
+		
+		//System.out.println("");
+		//System.out.println(Arrays.toString(genome));
+		
+		
+		int nodeNum;
+		
+		
+		state.random[thread].nextInt();
+		
+		
+		int nodeLength = s.maxArity+1;
+		
+		s.positionFromNodeNumber(nodeNumber);
+		
+		System.out.println(this.getActiveNodes().size());
+		
+		
 		if (s.mutationProbability[0] > 0.0)
+		{	
 			for (int x = 0; x < genome.length; x++)
-				if (state.random[thread].nextBoolean(s.mutationProbability[0])) {
-					if(this.getActiveNodes().contains(x))
+			{
+				if (state.random[thread].nextBoolean(s.mutationProbability[0]))
+				{
+					nodeNum=s.nodeNumber(x,genome);
+					if(this.getActiveNodes().contains(nodeNum))
 					{
 						genome[x] = randomValueFromClosedInterval(0, s
 							.computeMaxGene(x, genome), state.random[thread]);
 					}
 				}
+			}
+		}
+		//System.out.println(Arrays.toString(genome));
+		
+		//System.out.println("");
 
 	}
 	

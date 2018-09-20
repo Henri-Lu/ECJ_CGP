@@ -86,35 +86,21 @@ public class Evaluator {
 			sb = new StringBuffer();
 		}
 		/** Evaluate results for each output node. */
-		//HENRI...
-		//System.out.println("ind");
-		//System.out.println(ind);
-		//if(ind instanceof IntegerVectorIndividual) {
-		//	test = (IntegerVectorIndividual)ind;
-		//	System.out.println(test.genotypeToStringForHumans());
-		//}
-		//...HENRI
 		for (int i = 0; i < outputs.length; i++) {
 			add(expression, sb, "o" + i + " = ");
 			outputs[i] = evalNode(threadNum, expression, inputs, sb, ind
 					.getGenome(), isFloat ? s.interpretFloat(gf.length - 1 - i,
 					gf) : gi[gi.length - 1 - i], s);
 		}
+		
+		
 		ind.setActiveNodes(tempActiveNodes);
 		tempActiveNodes.clear();
-
+		
+		
+		
 		if (expression)
 			ind.expression = sb;
-		
-
-		//HENRI...
-		/*
-		System.out.println("aktive Knoten:");
-		for (int i = 0; i < activeNodes.size(); i++) {
-			System.out.print(activeNodes.get(i) + "; ");
-		}
-		*/
-		//...HENRI
 		
 		return outputs;
 	}
@@ -142,18 +128,13 @@ public class Evaluator {
 	private static Object evalNode(int threadNum, boolean expression,
 			Object[] inputs, StringBuffer expr, Object genome, int nodeNum,
 			VectorSpeciesCGP s) {
-		//HENRI...
-		/*
-		System.out.println("nodeNum");
-		System.out.println(nodeNum);
-		*/
-		//...HENRI
 		/**
 		 * adds nodes to track active Nodes
-		 * HENRI
+		 * 
 		 */
 		if(!tempActiveNodes.contains(nodeNum))
 			tempActiveNodes.add(nodeNum);
+		
 		
 		Object val = nodeMap.get(threadNum).get(nodeNum);
 		if (val != null) { /* We've already computed this node. */

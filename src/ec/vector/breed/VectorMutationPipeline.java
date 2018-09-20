@@ -68,17 +68,19 @@ public class VectorMutationPipeline extends BreedingPipeline
         // we'll modify them from there
         int n = sources[0].produce(min,max,subpopulation,inds, state,thread, misc);
 
+        /**
         // should we use them straight?
         if (!state.random[thread].nextBoolean(likelihood))
             {
             return n;
             }
 
+        */
         
         // else mutate 'em
         for(int q=start;q<n+start;q++)
             {
-            		advancedMutate((VectorIndividual) inds.get(q), state, thread);
+            advancedMutate((VectorIndividual) inds.get(q), state, thread);
             }
 
         return n;

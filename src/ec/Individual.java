@@ -98,7 +98,8 @@ public abstract class Individual implements Prototype, Comparable
 	}
     
     public void setActiveNodes(ArrayList<Integer> activeNodes) {
-		this.activeNodes = activeNodes;
+		this.activeNodes.clear();
+		this.activeNodes.addAll(activeNodes);
 	}
 
 
