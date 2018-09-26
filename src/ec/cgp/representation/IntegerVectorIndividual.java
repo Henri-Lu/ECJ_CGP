@@ -62,43 +62,31 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 	 *mutates active Nodes
 	 */
 	public void activeMutate(EvolutionState state, int thread) {
+		
+		
 		IntegerVectorSpecies s = (IntegerVectorSpecies) species;
-		
-		//System.out.println("");
-		//System.out.println(Arrays.toString(genome));
-		
-		
-		int nodeNum;
-		
-		
-		state.random[thread].nextInt();
-		
-		
-		int nodeLength = s.maxArity+1;
-		
-		s.positionFromNodeNumber(nodeNumber);
-		
-		System.out.println(this.getActiveNodes().size());
-		
-		
-		if (s.mutationProbability[0] > 0.0)
-		{	
-			for (int x = 0; x < genome.length; x++)
-			{
-				if (state.random[thread].nextBoolean(s.mutationProbability[0]))
-				{
-					nodeNum=s.nodeNumber(x,genome);
-					if(this.getActiveNodes().contains(nodeNum))
-					{
-						genome[x] = randomValueFromClosedInterval(0, s
-							.computeMaxGene(x, genome), state.random[thread]);
-					}
-				}
-			}
+
+		System.out.println("genome");
+		System.out.println(Arrays.toString(genome));
+		System.out.println("activeNodes");
+		System.out.println(activeNodes.toString());
+		System.out.println("activeNodes startIndex");
+		for(int i:activeNodes){
+			System.out.println(s.positionFromNodeNumber(i));
 		}
-		//System.out.println(Arrays.toString(genome));
 		
-		//System.out.println("");
+		//choose one Node, that is going to be mutated, at random from all active Nodes.
+		int nodeToMutate = activeNodes.get(state.random[thread].nextInt(activeNodes.size()));
+
+		//get the starting index of this Node.
+		int startingIndex = s.positionFromNodeNumber(nodeToMutate);
+		
+		//choose one index of this Node, that is going to be mutated, at random.
+		int indexToMutate = startingIndex + state.random[thread].nextInt(3);
+		
+		//mutate the computed index within the genome.
+		genome[indexToMutate] = randomValueFromClosedInterval(0, s
+				.computeMaxGene(indexToMutate, genome), state.random[thread]);
 
 	}
 	

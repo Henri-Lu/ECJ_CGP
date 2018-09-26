@@ -93,7 +93,6 @@ public class Evaluator {
 					gf) : gi[gi.length - 1 - i], s);
 		}
 		
-		
 		ind.setActiveNodes(tempActiveNodes);
 		tempActiveNodes.clear();
 		
@@ -132,8 +131,13 @@ public class Evaluator {
 		 * adds nodes to track active Nodes
 		 * 
 		 */
-		if(!tempActiveNodes.contains(nodeNum))
-			tempActiveNodes.add(nodeNum);
+		if(nodeNum>=s.numInputs)
+		{
+			if(!tempActiveNodes.contains(nodeNum))
+			{
+				tempActiveNodes.add(nodeNum);
+			}
+		}
 		
 		
 		Object val = nodeMap.get(threadNum).get(nodeNum);
