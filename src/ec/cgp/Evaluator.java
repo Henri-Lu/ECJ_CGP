@@ -1,6 +1,7 @@
 package ec.cgp;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -175,22 +176,21 @@ public class Evaluator {
 			if (isFloat) {
 				argFloat = ((float[]) genome)[pos + i + 1];
 			} else {
-				//HENRI...
-				/*
+				/**
+				System.out.println("genome");
+				System.out.println(genome.toString());
+				System.out.println(Arrays.toString((int[])genome));
 				System.out.println("pos+i");
 				System.out.println(pos);
 				System.out.println(i);
 				*/
-				//...Henri
 				argInt = ((int[]) genome)[pos + i + 1];
-				//HENRI...
-				/*
+				/**
 				System.out.println("index");
 				System.out.println(pos+i+1);
 				System.out.println("argInt");
 				System.out.println(argInt);
 				*/
-				//...HENRI
 			}
 
 			int num = isFloat ? s.interpretFloat(pos + i + 1, (float[]) genome)
