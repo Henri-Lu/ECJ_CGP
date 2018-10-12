@@ -23,6 +23,16 @@ public class ProblemParity extends ProblemCGP {
 
 	/** Number of bits in this parity problem. */
 	public static int NUM_BITS;
+	boolean output;
+	
+	public static int MAX;
+	
+	public void setup(EvolutionState state, Parameter base) {
+		super.setup(state, base);
+		
+		MAX = max();
+		
+	}
 	
 	/** Max value represented by this parity problem. */
 	public static int max() {
@@ -62,12 +72,21 @@ public class ProblemParity extends ProblemCGP {
 			/* evaluate CGP */
 			Object[] outputs = Evaluator.evaluate(state, threadnum, inputs, ind2);
 			Boolean result = (Boolean) outputs[0];
+		
 			
 			sb.append(result ? "1 " : "0 ");
 			if (result != even) diff++;
 		}
 		
 		((FitnessCGP)ind.fitness).setFitness(state, diff, diff == 0);
+	
+		
+		if(ind.fitness.isIdealFitness() && !output)
+		{
+			System.out.println(state.generation+1);
+			output=true;
+		}
+		
 		
 		ind2.expression.append("  Output: [" + sb + "]");
 		ind.evaluated = true;
