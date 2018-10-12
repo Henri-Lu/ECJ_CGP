@@ -88,3 +88,8 @@ eval.problem = ec.cgp.problems.ProblemParity
 # as they are discovered.
 #================================================================================
 stat = ec.cgp.Stats
+
+
+
+silent = true
+print-params = false
