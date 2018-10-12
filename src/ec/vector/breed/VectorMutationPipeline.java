@@ -78,10 +78,9 @@ public class VectorMutationPipeline extends BreedingPipeline
         */
         
         // else mutate 'em
-        for(int q=start;q<n+start;q++)
-            {
+        for(int q=start;q<n+start;q++) {
             advancedMutate((VectorIndividual) inds.get(q), state, thread);
-            }
+        }
 
         return n;
         }
