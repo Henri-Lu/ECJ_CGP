@@ -93,3 +93,5 @@ stat = ec.cgp.Stats
 
 silent = true
 print-params = false
+
+jobs = 100

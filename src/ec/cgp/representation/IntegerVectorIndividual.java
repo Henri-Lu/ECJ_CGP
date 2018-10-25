@@ -75,9 +75,11 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 		System.out.println("activeNodes startIndex");
 		*/
 		
+		/**
 		for(int i:activeNodes){
 			System.out.println(s.positionFromNodeNumber(i));
 		}
+		*/
 		
 		//put all indizes of active nodes into one ArrayList
 		ArrayList<Integer> activeIndex = new ArrayList<Integer>();
