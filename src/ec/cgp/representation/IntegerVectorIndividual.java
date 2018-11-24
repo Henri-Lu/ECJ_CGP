@@ -24,6 +24,14 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 
 	/** the genome */
 	public int[] genome;
+	
+	private ArrayList<Integer> indizesToMutate;
+	
+	private ArrayList<Integer> activeIndizes;
+	
+	private int temp;
+	
+	private int mutationNumber;
 
 	public Parameter defaultBase() {
 		return VectorDefaults.base().push(P_INTEGERVECTORINDIVIDUAL);
@@ -59,21 +67,20 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 				}
 
 	}
+	public void probabilityMutate(EvolutionState state, int thread) {
+		IntegerVectorSpecies temp = (IntegerVectorSpecies) species;
+		mutationNumber = (int) Math.round(activeIndizes.size() * temp.mutationProbability[0]);
+		activeMutate(state, thread, mutationNumber);
+	}
+	
+	
 	/**
 	 *mutates active Nodes
 	 */
-	public void activeMutate(EvolutionState state, int thread) {
+	public void activeMutate(EvolutionState state, int thread, int numberOfMutations) {
 		
 		
 		IntegerVectorSpecies s = (IntegerVectorSpecies) species;
-		/**
-		System.out.println("genome");
-		System.out.println(genome.toString());
-		System.out.println(Arrays.toString(genome));
-		System.out.println("activeNodes");
-		System.out.println(activeNodes.toString());
-		System.out.println("activeNodes startIndex");
-		*/
 		
 		/**
 		for(int i:activeNodes){
@@ -82,32 +89,40 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 		*/
 		
 		//put all indizes of active nodes into one ArrayList
-		ArrayList<Integer> activeIndex = new ArrayList<Integer>();
+		activeIndizes = new ArrayList<Integer>();
 		for(int node: activeNodes) {
 			for(int c=0; c<=s.maxArity;c++) {
-				activeIndex.add(s.positionFromNodeNumber(node)+c);
+				activeIndizes.add(s.positionFromNodeNumber(node)+c);
 			}
 		}
-		activeIndex.add(genomeLength()-1);
+		activeIndizes.add(genomeLength()-1);
 		
-		//choose one index at random
-		int indexToMutate = activeIndex.get(state.random[thread].nextInt(activeIndex.size()));
-		
-		
-		/**
-		//choose one Node, that is going to be mutated, at random from all active Nodes.
-		int nodeToMutate = activeNodes.get(state.random[thread].nextInt(activeNodes.size()));
+		//choose x indizes at random
+		indizesToMutate = new ArrayList<Integer>();
+		if(numberOfMutations > activeIndizes.size()) {
+			
 
-		//get the starting index of this Node.
-		int startingIndex = s.positionFromNodeNumber(nodeToMutate);
-		
-		//choose one index of this Node, that is going to be mutated, at random.
-		int indexToMutate = startingIndex + state.random[thread].nextInt(3);
-		*/
-		
-		//mutate the computed index within the genome.
-		genome[indexToMutate] = randomValueFromClosedInterval(0, s
-				.computeMaxGene(indexToMutate, genome), state.random[thread]);
+			for(int i = 0; i < activeIndizes.size(); i++) {
+				genome[activeIndizes.get(i)] = randomValueFromClosedInterval(0, s
+						.computeMaxGene(activeIndizes.get(i), genome), state.random[thread]);
+			}
+			
+		}
+		else {
+			for(int i = 0; i < numberOfMutations; i++) {
+				temp = state.random[thread].nextInt(activeIndizes.size());
+				indizesToMutate.add(activeIndizes.get(temp));
+				activeIndizes.remove(temp);
+			}
+			
+
+
+			//mutate the computed index within the genome.
+			for(int i = 0; i < numberOfMutations; i++) {
+				genome[indizesToMutate.get(i)] = randomValueFromClosedInterval(0, s
+						.computeMaxGene(indizesToMutate.get(i), genome), state.random[thread]);
+			}
+		}
 
 	}
 	

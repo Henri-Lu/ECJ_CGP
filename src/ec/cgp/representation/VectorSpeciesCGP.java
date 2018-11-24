@@ -200,14 +200,12 @@ public abstract class VectorSpeciesCGP extends VectorSpecies {
 	}
 
 	public void setup(EvolutionState state, Parameter base) {
-		System.out.println("species setup");
 
 		Parameter def = defaultBase();
 		numNodes = state.parameters.getInt(base.push(P_NUM_NODES), def
 				.push(P_NUM_NODES), 1);
 		numInputs = state.parameters.getInt(base.push(P_NUM_INPUTS), def
 				.push(P_NUM_INPUTS), 1);
-		System.out.println(numInputs + " SMEG!");
 		numOutputs = state.parameters.getInt(base.push(P_NUM_OUTPUTS), def
 				.push(P_NUM_OUTPUTS), 1);
 		maxArity = state.parameters.getInt(base.push(P_MAX_ARITY), def

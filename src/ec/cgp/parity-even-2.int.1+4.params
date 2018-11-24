@@ -53,8 +53,7 @@ pop.subpop.0.species.functions = ec.cgp.functions.FunctionsParity
 pop.subpop.0.species.num-functions = 5   
 
 # number of nodes in your CGP, not including inputs and outputs.
-pop.subpop.0.species.nodes = 5
-
+pop.subpop.0.species.nodes = 10
 # number of input nodes in your CGP.  Your problem class feeds these inputs to the CGPEvaluator. 
 pop.subpop.0.species.inputs = 2  
 

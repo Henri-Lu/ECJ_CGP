@@ -87,7 +87,7 @@ public class VectorMutationPipeline extends BreedingPipeline
     
     
     	private void advancedMutate(VectorIndividual ind, EvolutionState tempState, int tempThread) {
-    		ind.activeMutate(tempState, tempThread);
+    		ind.activeMutate(tempState, tempThread, 4);
     		ind.evaluated = false;
     	}
     	
