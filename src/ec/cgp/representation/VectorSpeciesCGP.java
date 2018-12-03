@@ -36,6 +36,7 @@ public abstract class VectorSpeciesCGP extends VectorSpecies {
 	public static final String P_NUM_FUNCTIONS = "num-functions";
 	public static final String P_MAX_ARITY = "maxArity";
 	public static final String P_FUNCTIONS = "functions";
+	public static final String P_NUM_GENES_MUTATION = "num-genes-mutation";
 
 	/**
 	 * Number of function call nodes comprising the CGP. Does not include output
@@ -57,6 +58,8 @@ public abstract class VectorSpeciesCGP extends VectorSpecies {
 
 	/** Max arity of the function set */
 	public int maxArity;
+	
+	public int numGenesMutation;
 
 	/**
 	 * Computes the total number of gene values needed for all function and
@@ -212,6 +215,12 @@ public abstract class VectorSpeciesCGP extends VectorSpecies {
 				.push(P_MAX_ARITY), 1);
 		numFunctions = state.parameters.getInt(base.push(P_NUM_FUNCTIONS), def
 				.push(P_NUM_FUNCTIONS), 1);
+		
+		
+		numGenesMutation = state.parameters.getInt(base.push(P_NUM_FUNCTIONS), def
+				.push(P_NUM_FUNCTIONS), 1);
+		
+		
 		if (numFunctions == 0) {
 			state.output.fatal("species.num-functions must be > 0.");
 		}
