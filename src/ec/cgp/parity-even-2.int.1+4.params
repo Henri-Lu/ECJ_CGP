@@ -88,9 +88,12 @@ eval.problem = ec.cgp.problems.ProblemParity
 #================================================================================
 stat = ec.cgp.Stats
 
+#number of active genes that get mutated
+#pop.subpop.0.species.num-genes-mutation = 1
+
 
 
 silent = true
 print-params = false
 
-jobs = 100
+jobs = 60

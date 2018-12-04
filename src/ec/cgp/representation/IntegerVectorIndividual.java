@@ -67,20 +67,23 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 				}
 
 	}
+	/*
 	public void probabilityMutate(EvolutionState state, int thread) {
 		IntegerVectorSpecies temp = (IntegerVectorSpecies) species;
 		mutationNumber = (int) Math.round(activeIndizes.size() * temp.mutationProbability[0]);
 		activeMutate(state, thread, mutationNumber);
 	}
+	*/
 	
 	
 	/**
 	 *mutates active Nodes
 	 */
-	public void activeMutate(EvolutionState state, int thread, int numberOfMutations) {
+	public void activeMutate(EvolutionState state, int thread) {
 		
 		
 		IntegerVectorSpecies s = (IntegerVectorSpecies) species;
+		int numberOfMutations = s.numGenesMutation;
 		
 		/**
 		for(int i:activeNodes){

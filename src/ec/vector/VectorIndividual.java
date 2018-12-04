@@ -98,7 +98,7 @@ public abstract class VectorIndividual extends Individual
     /** Destructively mutates the individual in some default manner.  The default version calls reset()*/
     public void defaultMutate(EvolutionState state, int thread) { reset(state,thread); }
     
-    public void activeMutate(EvolutionState state, int thread, int numberOfMutations) { reset(state,thread); }
+    public void activeMutate(EvolutionState state, int thread) { reset(state,thread); }
 
     /** Initializes the individual. */
     public abstract void reset(EvolutionState state, int thread);
