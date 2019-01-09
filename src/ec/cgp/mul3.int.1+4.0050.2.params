@@ -1,0 +1,4 @@
+parent.0 = mul3.int.1+4.params
+
+pop.subpop.0.nodes = 50
+pop.subpop.0.species.num-genes-mutation = 2

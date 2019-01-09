@@ -26,7 +26,7 @@ seed.3 = time
 
 #evaluations = 100
 generations=9999999
-jobs=100
+jobs=60
 
 
 #================================================================================
@@ -39,7 +39,7 @@ pop.subpop.0 = ec.Subpopulation
 # Initial population size is set to mu+lambda.  Be sure to change this if you 
 # modify es.mu and es.lambda.
 #================================================================================
-pop.subpop.0.size = 5
+pop.subpop.0.nodes = 5
 pop.subpop.0.species = ec.cgp.representation.IntegerVectorSpecies
 pop.subpop.0.species.ind =  ec.cgp.representation.IntegerVectorIndividual
 

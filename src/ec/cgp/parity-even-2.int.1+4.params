@@ -7,7 +7,7 @@
 #
 
 parent.0 = simple-cgp.params
-stat.file = $parity-even-2.int.1+4.params.out.stat
+#stat.file = $parity-even-2.int.1+4.params.out.stat
 
 #================================================================================
 # Set up 1+4 evolutionary strategy
@@ -89,7 +89,7 @@ eval.problem = ec.cgp.problems.ProblemParity
 stat = ec.cgp.Stats
 
 #number of active genes that get mutated
-#pop.subpop.0.species.num-genes-mutation = 1
+pop.subpop.0.species.num-genes-mutation = 1
 
 
 

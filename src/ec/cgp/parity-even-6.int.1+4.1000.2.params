@@ -6,7 +6,7 @@
 # generation.
 #
 parent.0 = parity-even-2.int.1+4.params
-stat.file = $parity-even-4.int.1+4.params.out.stat
+ 
 pop.subpop.0.species.nodes = 1000
 pop.subpop.0.species.inputs = 6
 
