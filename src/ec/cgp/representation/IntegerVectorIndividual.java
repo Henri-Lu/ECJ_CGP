@@ -32,6 +32,10 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 	private int temp;
 	
 	private int mutationNumber;
+	
+	private double numberOfMutations;
+	
+	private int computedNumberOfMutations;
 
 	public Parameter defaultBase() {
 		return VectorDefaults.base().push(P_INTEGERVECTORINDIVIDUAL);
@@ -59,12 +63,13 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 	public void defaultMutate(EvolutionState state, int thread) {
 		
 		IntegerVectorSpecies s = (IntegerVectorSpecies) species;
-		if (s.mutationProbability[0] > 0.0)
+		if (s.mutationProbability[0] >= 1.0) {
 			for (int x = 0; x < genome.length; x++)
 				if (state.random[thread].nextBoolean(s.mutationProbability[0])) {
 					genome[x] = randomValueFromClosedInterval(0, s
 							.computeMaxGene(x, genome), state.random[thread]);
 				}
+		}
 
 	}
 	/*
@@ -83,7 +88,7 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 		
 		
 		IntegerVectorSpecies s = (IntegerVectorSpecies) species;
-		int numberOfMutations = s.numGenesMutation;
+		numberOfMutations = s.numGenesMutation;
 		
 		/**
 		for(int i:activeNodes){
@@ -102,7 +107,7 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 		
 		//choose x indizes at random
 		indizesToMutate = new ArrayList<Integer>();
-		if(numberOfMutations > activeIndizes.size()) {
+		if(numberOfMutations >= activeIndizes.size()) {
 			
 
 			for(int i = 0; i < activeIndizes.size(); i++) {
@@ -111,22 +116,31 @@ public class IntegerVectorIndividual extends VectorIndividualCGP {
 			}
 			
 		}
-		else {
-			for(int i = 0; i < numberOfMutations; i++) {
-				temp = state.random[thread].nextInt(activeIndizes.size());
-				indizesToMutate.add(activeIndizes.get(temp));
-				activeIndizes.remove(temp);
-			}
+		else if (numberOfMutations < activeIndizes.size() && numberOfMutations >= 1.0) {
+			mutateXInY((int)numberOfMutations, activeIndizes, state, thread, s);
+		}
+		else if(numberOfMutations < 1.0 && numberOfMutations > 0.0) {
+			computedNumberOfMutations = (int) Math.ceil(activeIndizes.size() * numberOfMutations);
+			mutateXInY(computedNumberOfMutations, activeIndizes, state, thread, s);
 			
-
-
-			//mutate the computed index within the genome.
-			for(int i = 0; i < numberOfMutations; i++) {
-				genome[indizesToMutate.get(i)] = randomValueFromClosedInterval(0, s
-						.computeMaxGene(indizesToMutate.get(i), genome), state.random[thread]);
-			}
 		}
 
+	}
+	
+	private void mutateXInY(int numOfMut, ArrayList<Integer> mutateSample, EvolutionState state, int thread, IntegerVectorSpecies s) {
+		for(int i = 0; i < numOfMut; i++) {
+			temp = state.random[thread].nextInt(mutateSample.size());
+			indizesToMutate.add(mutateSample.get(temp));
+			mutateSample.remove(temp);
+		}
+		
+
+
+		//mutate the computed index within the genome.
+		for(int i = 0; i < numOfMut; i++) {
+			genome[indizesToMutate.get(i)] = randomValueFromClosedInterval(0, s
+					.computeMaxGene(indizesToMutate.get(i), genome), state.random[thread]);
+		}
 	}
 	
 	

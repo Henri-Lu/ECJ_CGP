@@ -59,7 +59,7 @@ public abstract class VectorSpeciesCGP extends VectorSpecies {
 	/** Max arity of the function set */
 	public int maxArity;
 	
-	public int numGenesMutation;
+	public double numGenesMutation;
 
 	/**
 	 * Computes the total number of gene values needed for all function and
