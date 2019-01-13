@@ -9,4 +9,4 @@ parent.0 = parity-even-2.int.1+4.params
 
 pop.subpop.0.species.nodes = 1000
 pop.subpop.0.species.inputs = 4
-pop.subpop.0.species.num-genes-mutation = 0.01
+pop.subpop.0.species.num-genes-mutation = 0.02
