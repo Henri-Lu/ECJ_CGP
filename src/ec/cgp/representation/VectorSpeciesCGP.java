@@ -217,7 +217,7 @@ public abstract class VectorSpeciesCGP extends VectorSpecies {
 				.push(P_NUM_FUNCTIONS), 1);
 		
 		
-		numGenesMutation = state.parameters.getInt(base.push(P_NUM_GENES_MUTATION), def
+		numGenesMutation = state.parameters.getDouble(base.push(P_NUM_GENES_MUTATION), def
 				.push(P_NUM_GENES_MUTATION), 1);
 		
 		
