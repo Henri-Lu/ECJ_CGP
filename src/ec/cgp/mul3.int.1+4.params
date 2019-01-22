@@ -25,7 +25,7 @@ seed.2 = time
 seed.3 = time
 
 #evaluations = 100
-generations=9999999
+generations=25000
 jobs=60
 
 
@@ -106,6 +106,7 @@ pop.subpop.0.species.fitness = ec.cgp.FitnessCGP
 #================================================================================
 eval.problem = ec.cgp.problems.ProblemMultiplier3Bit
 
+finish   = ec.cgp.finisher.FinisherCGP
 
 stat.silent=true
 silent = true
