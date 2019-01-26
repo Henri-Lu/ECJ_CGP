@@ -92,7 +92,7 @@ stat = ec.cgp.Stats
 pop.subpop.0.species.num-genes-mutation = 1
 
 
-
+stat.silent=true
 silent = true
 print-params = false
 
