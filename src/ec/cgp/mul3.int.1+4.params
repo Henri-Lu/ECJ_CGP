@@ -25,7 +25,7 @@ seed.2 = time
 seed.3 = time
 
 #evaluations = 100
-generations=25000
+generations=999999
 jobs=60
 
 
