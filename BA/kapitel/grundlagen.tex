@@ -1,0 +1,283 @@
+% kapitel2.tex
+
+
+
+\newcounter{claims}
+\newcounter{hypothesises}
+\newtheorem{myclaim}[claims]{Scientific Claim}
+\newtheorem{hypothesis}[hypothesises]{Hypothesis}
+
+\chapter{Grundlagen}
+\label{cha:grundlagen}
+
+
+Genetic Programming (GP), wie von Koza 
+%\cite{koza-90}[Koza, J.R.: Genetic Programming: On the Programming of Computers by Means of Natural Selection. MIT Press, Cambridge, MA, USA (1992)][Koza, J.R.: Genetic Programming II: Automatic Discovery of Reusable Programs. MIT Press, Cambridge Massachusetts (May 1994) ] 
+verbreitet, nutzt Bäume zur Darstellung und Entwickelung von Programmen. Neue Generationen werden produziert, indem zufällig gewählte Teilbäume getauscht werden. Ursprünglich wurden Bäume als Datenstruktur gewählt, um Crossover zu unterschiedlich langer Genotypen zu ermöglichen. Später hat sich jedoch herausgestellt, dass Crossover nicht immer der beste genetische Operator ist um neue Generationen zu produzieren
+%[Luke, S., Spector, L.: A Comparison of Crossover and Mutation in Genetic Programming. In: Genetic Programming 1997: Proceedings of the Second Annual Conference. pp. 240–248. Morgan Kaufmann, Stanford University, CA, USA (13-16 Jul 1997][Luke, S., Spector, L.: A Revised Comparison of Crossover and Mutation in Genetic Programming. In: Genetic Programming 1998: Proceedings of the Third Annual Conference. pp. 208–213. Morgan Kaufmann, University of Wisconsin, Madison, Wisconsin, USA (22-25 Jul 1998)][White, D.R., Poulding, S.: A Rigorous Evaluation of Crossover and Mutation in Genetic Programming. In: Proceedings of the 12th European Conference on Genetic Programming, EuroGP 2009. LNCS, vol. 5481, pp. 220–231. Springer, Tuebingen (Apr 15-17 2009)]
+.
+
+Im Gegensatz zu GP benutzt CGP eine Liste aus Integern die auf gerichtete azyklische Graphen abgebildet werden. Durch eine fest bestimmte Anzahl an Knoten wird CGP vor 'aufblähen' geschützt, was ein Charakteristisches Problem von GP darstellt. Die Knoten sind in einem Gitter angeordnet und können nicht mit Knoten in der selben Spalte verbunden sein (Figur 1). Der gebräuchliche Ansatz ist es, die Knoten in einer Reihe anzuordnen, sodass sich keine zwei Knoten in der selben Spalte befinden und für die Generierung der einer neuen Generation den (1+4) CGP Algorithmus zu verwenden. Dieser nutzt das Individuum mit der geringsten Fitness und erzeugt aus diesem vier Nachkommen 
+%[miller_thomson2000]
+. 
+Vor kurzem ist jedoch ein Paper erschienen, das sich mit einem Ansatz beschäftigt hat, bei dem ein rechteckiges Gitter und ein ($\mu$+$\lambda$) CGP Algorithmus verwendet werden. Während dieser bessere Resultate für boolsche und symbolische Regressionsfunktionen erzielt hat, wurde in dieser Arbeit der gebräuchliche (1+4) Ansatz verwendet, da dieser sich weiterhin für boolsche Benchmarks eignet 
+%[Parametrizing Cartesian Genetic Programming: An Empirical Study Paul Kaufmann1 and Roman Kalkreuth2]
+.
+\begin{figure}
+
+\includegraphics[scale=0.3]{cgpExample}
+
+\end{figure}
+
+\section{Mutationsalgorithmen}
+
+Die folgenden Mutationsalgorithmen unterscheiden sich lediglich in der Auswahl der zu mutierenden Knoten. Sind ein oder mehrere Knoten ausgewählt, wird zufällig bestimmt ob sich eine der input Kanten ändert, oder ob die Funktion innerhalb des Knoten ausgetauscht wird.
+
+
+\subsection{traditioneller Mutationsalgorithmus}
+
+Dies ist die Standardmethode für CGP. Es wird eine Mutationswahrscheinlichkeit angegeben (z.B. 0,01) und jeder Knoten hat diese Wahrscheinlichkeit zu mutieren. Somit kann es passieren, das die Hälfte der Knoten, oder gar kein Knoten mutiert. Da ein Großteil der Knoten nicht aktiv ist, passiert es bei einer geringen Mutationsrate häufig, das kein aktiver Knoten mutiert wird und sich somit die Fitness nicht ändert. Eine zu große Mutationsrate ist allerdings für viele Probleme ungeeignet, da das Zufallselement zu groß ist und eine Schrittweise Annäherung an das Ziel schwieriger wird.
+
+\subsection{single active gene mutation}
+
+Bei der 'single active gene mutation' gibt es keine Mutationswahrscheinlichkeit. Stattdessen wird bei jedem Mutationsvorgang genau ein aktiver Knoten zufällig ausgewählt und dieser wie vorher beschrieben mutiert. Dabei ist es weiterhin möglich teile des Graphen zu aktivieren und zu deaktivieren, allerdings hat jede Mutation eine direkte Auswirkung auf das Ergebnis und somit auf die Fitness. Das soll das Problem der traditionellen Mutation lösen, bei der es sein kann, dass eine Mutation über mehrere Generationen keine Auswirkung auf die Fitness hat. Der Nachteil an 'single active gene mutation' ist, dass es nicht mit der Anzahl an Knoten im Graphen wächst. Ein mutierter Knoten pro Generation mag für einen Graphen mit 50 Knoten ausreichend sein, ist für einen Graphen mit 500 Knoten jedoch viel zu langsam. Außerdem wird sich 'single active gene mutation' wahrscheinlich nicht so gut auf Probleme anwenden lassen, die lokale Optima haben, da sich teile des Graphen zwar aktivieren und deaktivieren, jedoch nicht im inaktiven zustand verändern lassen.
+
+Daher testen wir den Algorithmus auch mit mehreren mutierenden knoten. Dabei geben wir einen Parameter wie die Mutationswahrscheinlichkeit bei der traditionellen Mutation und in ganzen positiven Zahlen an.
+
+\subsubsection{partial active gene mutation}
+
+Bei der Mutation von Individuen kann es passieren das der aktive Teil des Graphen stark fluktuiert. Bei der traditionellen Mutationsmethode automatisch mehr aktive knoten mutiert werden, da die Wahrscheinlichkeit einen aktiven knoten zu treffen größer ist, wenn mehr vorhanden sind. Hierfür wird eine Variation der 'single active gene mutation' eingeführt, die 'partial active gene mutation'. Die 'partial active gene mutation' verhält sich wie die 'single active gene mutation', bestimmt allerdings für jedes Individuum die Mutationsrate neu um sie auf die Anzahl der aktiven knoten anzupassen. Dies geschieht mithilfe der derzeitigen Anzahl an aktiven Knoten und einem zu Beginn eingegebenen Mutationsbruchteil. Hierbei ist zu beachten, dass immer aufgerundet wird um zu verhindern das die Mutationsrate auf 0 sinkt wodurch wir feststecken würden. Ist der Bruchteil beispielsweise 0,02 und die Anzahl an aktiven Knoten 55, würden 2 aktive Knoten mutiert werden.
+
+
+
+\section{Probleme}
+
+Da 'Cartesian Genetic Programming' sich besonders gut eignet um boolsche Probleme \cite{miller:1999:ACGP} und Probleme mit mehreren Outputs zu lösen, nutzen wir zwei boolsche Probleme um den Mutationsalgorithmus zu testen, von denen eines mehrere Ausgaben und das andere eine Ausgabe hat.
+
+\subsection{Parität}
+
+Als boolsches Problem mit einer Ausgabe, verwenden wir das Paritätsproblem. Hierbei erhält das CGP eine Bitfolge und gibt TRUE aus, falls die Parität der Bitfolge gerade ist, also falls sich eine gerade Anzahl an Einsen in der Bitfolge befinden, andernfalls gibt das Programm FALSE aus. Das CGP hat also X Inputknoten und einen Outputknoten, wobei X die Länge der Bitfolge ist. Dieses Problem lässt sich in unterschiedlichem Umfang anwenden, da mit steigender Länge des Eingabebits die Anzahl der Generationen bis das CGP das Problem lösen kann zunimmt. Wir verwenden unterschiedliche Varianten des Paritätsproblems, mit einer Eingabe von 4, 5, 6 und 7 Bits, mehr zur Konfiguration und den Parametern später.
+
+
+\subsection{3-Bit-Multiplizierer}
+
+Das 3-Bit-Multiplizierer Problem (ebenfalls boolsches problem) ist besonders spannend, da sich die Graphen basierte Struktur des CGP anbietet Schaltkreise darzustellen. Hierbei versuchen wir aus dem CGP einen 3-Bit-Multiplizierer zu machen. Wir brauchen also 2 Bitfolgen die jeweils 3 Bits lang sind. Mit 3 Bits lässt sich 7 als größte Zahl darstellen. sieben mal sieben ist gleich 49, welche sich mit 6 Bits darstellen lässt, also brauchen wir 6 Bits für die Ausgabe. Unser Graph braucht also 6 Inputknoten und 6 Ouputknoten.
+
+\chapter{Versuche}
+
+
+\section{Versuchskonfiguration}
+
+Zur Versuchsdurchführung nutzen wir zwei boolsche Probleme genutzt, 3-Bit-Multiplizierer und Parität, wobei wir die Varianten Parität 4, Parität 5, Parität 6 und Parität 7 verwenden. Um zu bewerten, wie Effizient die Mutationsalgorithmen arbeiten, lassen wir uns die Anzahl der Generationen ausgeben, bis ein Graph gefunden wurde, der das Problem löst. Das Ziel ist es die Anzahl der Generationen zu verringern, da mehr Generationen mehr Auswertungen der Graphen bedeuten was wiederum Rechenzeit in Anspruch nimmt. Verglichen werden der traditionelle Mutationsalgorithmus, 'single active gene mutation', sowie 'partial active gene mutation'.
+
+Als Ursprungspopulation werden zufällig generierte Graphen genutzt. Eine neue Generation wird nach dem (1 + 4) CGP Algorithmus generiert. Dabei wird das Individuum mit der niedrigsten Fitness ausgewählt und viermal mutiert, somit besteht eine Generation immer aus einem Individuum aus der vorherigen Generation und 4 Nachkommen von diesem. Bei der Auswahl eines Individuums werden bei gleicher Fitness Nachkommen bevorzugt.
+
+\begin{hypothesis}
+Der 'single active gene mutation' Algorithmus benötigt weniger Generationen um Probleme aus allen Bereichen zu lösen als der traditionelle Wahrscheinlichkeitsbasierte Mutationsalgorithmus.
+\end{hypothesis}
+
+Um die Hypothese zu testen, lassen wir die Algorithmen auf den jeweiligen Probleme mit 50, 100, 200, 500 und 1000 Knoten 60 mal laufen, mit Ausnahme von Parität 7, welches wir nur mit 200 Knoten und 30 Durchläufen testen. Da einige Durchläufe nicht innerhalb von 9999999 Generationen fertig geworden sind, machen wir eine zweite Reihe von Versuchen. Dafür verwenden wir die Konfigurationen der Versuche, die vorher mindestens ein drittel der Durchläufe nicht innerhalb der 9999999 Generationen beenden konnten. Hierbei benutzen wir allerdings nur ein Budget von 999999 Generationen und lassen uns, falls dieses erreicht wird die Fitness des besten Individuums, ausgeben.
+\begin{table}[!ht]
+\centering 
+\caption{Konfiguration der Versuche für das Paritätsproblem mit 4, 5, 6 und 7 Eingabeknoten.}
+\scalebox{0.82}{
+\begin{tabular}{|l|l||r|r|r|}
+\hline
+\scriptsize \textbf{Problem} & \scriptsize \textbf{Algorithmus} & \scriptsize \textbf{Mutations} & \scriptsize \textbf{Anzahl der} & \scriptsize \textbf{Durchläufe} \\
+& & \scriptsize  \textbf{rate} & \scriptsize  \textbf{Knoten} &  \\ \hline
+
+
+  \multirow{ 3 }{*}{Parität 4 /  5 /  6}  
+   & traditionelle Mutation & 0.04 & 50 - 1000* & 60 \\
+   & single active gene mutation & 1/2/3/4 & 50 - 1000* & 60 \\ 
+   & partial active gene mutation & 0.01/0.03 & 50 - 1000* & 60 \\
+      \hline
+   
+  \multirow{ 3 }{*}{Parität 7}  
+   & traditionelle Mutation & 0.03 & 200 & 30 \\
+   & single active gene mutation & 1/2/3/4 & 200 & 30 \\ 
+   & partial active gene mutation & 0.01/0.03 & 200 & 30 \\
+      \hline
+   
+  \multirow{ 3 }{*}{3-Bit-Multiplizierer}  
+   & traditionelle Mutation & 0.01 & 50 - 1000* & 60 \\
+   & single active gene mutation & 1/2/3/4 & 50 - 1000* & 60 \\ 
+   & partial active gene mutation & 0.01/0.03 & 50 - 1000* & 60 \\
+      \hline
+      \multicolumn{4}{l}{\textsuperscript{}\small{\{50, 100, 200, 500, 1000\}. }} \\
+\end{tabular}
+}
+\label{table_meta3}
+\end{table}
+
+
+Die Implementation ist in Java, mithilfe des ECJ Evolutionary Computation Research System und der zugehörigen CGP Erweiterung geschehen. Die Versuche wurden auf dem Batchsystem des LS 11 der Fakultät Informatik an der TU Dortmund ausgeführt. Für die zweite Reihe von Versuchen wurde ein Computer mit folgender Hardware genutzt:  AMD Ryzen 5 1500X Quad-Core Processor, 3.5 GHz, 18 MB cache per core; 8GB RAM DDR4@2133 MHz
+
+
+\section{Ergebnisse für das Paritätsproblem}
+
+Obwohl viele unterschiedliche Variablen gesetzt wurden, führen alle Versuche für das Paritätsproblem zu einem sehr ähnlich Ergebnis. Wie in Tabelle 3.2 zu sehen ist, schneidet die 'single active gene mutation' wesentlich besser ab, die Generationenanzahl des traditionellen Algorithmus sind im Median doppelt bis fasst viermal so groß. Bezüglich der Mutationsrate ist aber kein Muster zu erkennen. Weder ist eine Mutationsrate besonders erfolgreich, noch scheint es sich proportional oder antiproportional zu der Knotenanzahl zu verhalten. Während die 'partial active gene mutation' zwar ebenfalls weniger Generationen benötigt als der traditionelle Algorithmus, verhält er sich dennoch für die meisten versuche nicht so effizient wie die 'single active gene mutation'. Allerdings scheint hier die niedrigere Mutationsrate bessere Ergebnisse zu erzielen.
+
+
+
+
+\begin{table}[!ht]
+\centering 
+\caption{Resultate der Versuchsreihe für das Paritätsproblem mit vier Eingabeknoten.}
+\scalebox{0.82}{
+\begin{tabular}{ |l|l|r||r|r|r|r|r|}
+\hline
+\scriptsize \textbf{Knoten} & \scriptsize \textbf{Algorithmus} & \scriptsize \textbf{Mutations} & \scriptsize \textbf{min} & \scriptsize \textbf{unteres} & \scriptsize \textbf{Median} & \scriptsize \textbf{oberes} & \scriptsize \textbf{max} \\
+& & \scriptsize  \textbf{rate} & \scriptsize  \textbf{}  & \scriptsize \textbf{quartil}& \scriptsize  \textbf{}& \scriptsize  \textbf{quartil}& \scriptsize  \textbf{} \\ \hline
+
+
+  \multirow{ 7 }{*}{50}  
+   & traditionelle Mutation & 0.04 & 2502 & 17343.25 & 26748.50 & 45067.50 & 131069 \\
+   & single active gene mutation & 1 & 2198 & 7322.75 & 13181.00 & 21272.50 & 41109 \\ 
+   & single active gene mutation & 2 & 1092 & 9059.75 & 12741.00 & 22042.50 & 68551 \\
+   & single active gene mutation & 3 & 1413 & 5637.25 & 9359.50 & 16637.00 & 149940 \\
+   & single active gene mutation & 4 & 3042 & 7411.75 & 13443.50 & 23293.00 & 70787 \\
+   & partial active gene mutation & 0.01 & 2155 & 9312.25 & 16398.50 & 21842.00 & 84162 \\
+   & partial active gene mutation & 0.03 & 2956 & 8523.75 & 16926.00 & 27037.50 & 166452 \\
+      \hline
+   
+  \multirow{ 7 }{*}{100}  
+   & traditionelle Mutation & 0.04 & 3472 & 11533.50 & 17073.00 & 29156.75 & 66681 \\
+   & single active gene mutation & 1 & 2211 & 4268.25 & 6837.50 & 11410.75 & 36836 \\ 
+   & single active gene mutation & 2 & 2391 & 4149.75 & 7614.00 & 12833.25 & 49861 \\
+   & single active gene mutation & 3 & 932 & 4122.25 & 7574.50 & 14948.75 & 39941 \\
+   & single active gene mutation & 4 & 1795 & 6201.00 & 9558.00 & 14735.25 & 72646 \\
+   & partial active gene mutation & 0.01 & 1302 & 6082.25 & 9521.00 & 15979.50 & 61606 \\
+   & partial active gene mutation & 0.03 & 1612 & 6426.00 & 10895.5 & 16346.00 & 29200 \\
+      \hline
+  
+  \multirow{ 7 }{*}{200}
+   & traditionelle Mutation & 0.04 & 4464 & 9778.00 & 15021.50 & 20934.50 & 49779 \\
+   & single active gene mutation & 1 &  558 & 2881.75 & 5506.00 & 8266.75 & 20606 \\ 
+   & single active gene mutation & 2 & 434 & 3324.25 & 4915.00 & 9501.00 & 33647 \\
+   & single active gene mutation & 3 & 515 & 3914.75 & 5686.00 & 9553.75 & 28427 \\
+   & single active gene mutation & 4 & 1425 & 3329.00 & 5889.50 & 9790.00 & 25937 \\
+   & partial active gene mutation & 0.01 & 936 & 5002.75 & 7904.00 & 13101.25 & 46147 \\
+   & partial active gene mutation & 0.03 & 1468 & 5418.00 & 7435.50 & 13910.50 & 36396 \\
+      \hline
+   
+  \multirow{ 7 }{*}{500}
+   & traditionelle Mutation & 0.04 & 1972 & 8576.00 & 12490.00 & 19928.25 & 98274 \\
+   & single active gene mutation & 1 &  663 & 2622.75 & 4258.00 & 6622.50 & 18702 \\ 
+   & single active gene mutation & 2 & 676 & 2209.75 & 3905.00 & 6450.50 & 16996 \\
+   & single active gene mutation & 3 & 491 & 2729.75 & 4196.50 & 6933.00 & 16982 \\
+   & single active gene mutation & 4 & 567 & 2687.25 & 3752.00 & 6323.75 & 16082 \\
+   & partial active gene mutation & 0.01 & 850 & 3239.75 & 5362.50 & 9609.75 & 24918 \\
+   & partial active gene mutation & 0.03 & 805 & 4159.75 & 7377.00 & 14285.75 & 27501 \\
+      \hline
+    
+  \multirow{ 7 }{*}{1000} 
+   & traditionelle Mutation & 0.04 & 1450 & 5813.00 & 11499.00 & 19757.25 & 67705 \\
+   & single active gene mutation & 1 &  663 & 1764.50 & 3566.00 & 7230.25 & 22658 \\ 
+   & single active gene mutation & 2 & 974 & 2540.25 & 3740.00 & 5920.00 & 30927 \\
+   & single active gene mutation & 3 & 755 & 2298.50 & 3238.50 & 5131.25 & 14659 \\
+   & single active gene mutation & 4 & 758 & 2298.50 & 3806.00 & 5639.00 & 19191 \\
+   & partial active gene mutation & 0.01 & 1300 & 3718.00 & 6019.00 & 8050.25 & 15084 \\
+   & partial active gene mutation & 0.03 & 903 & 3732.00 & 6051.50 & 10089.75 & 27084 \\
+      \hline
+
+\end{tabular}
+}
+\label{table_meta3}
+\end{table}
+%\hspace*{-3.0cm}   \includegraphics[height=24cm, width=22cm]{parity6_50_100}
+
+
+%\hspace*{-3.0cm}   \includegraphics[height=24cm, width=22cm]{parity6_200_500_1000}
+
+
+\section{Ergebnisse für den 3-Bit-Multiplizierer}
+
+Für das 3-Bit-Multiplizierer Problem ist das Ergebnis nicht sehr eindeutig. Während viele Durchläufe der 'single active gene mutation' und der 'partial active gene mutation' nicht innerhalb der 9999999 Generationen das Problem lösen konnten, hatte der traditionelle Mutationsalgorithmus immer Erfolg, mit Ausnahme von 3 Durchläufen auf dem 50 Knoten Graph. Mit zunehmender Größe des Graphen, sind 'single active gene mutation' und 'partial active gene mutation' Erfolgreicher geworden, allerdings haben sie nie 60 von 60 Durchläufen innerhalb von 9999999 Generationen geschafft. Interessant ist aber, dass für 1000 Knoten, bei dem die 'single active gene mutation' über 50 der Durchläufe rechtzeitig beenden konnte, für die Mutationsraten 1 und 2 bessere Ergebnisse erzielen konnte als die traditionelle Mutation.
+
+\begin{table}[!ht]
+\centering 
+\caption{Resultate der Versuchsreihe für das 3-Bit-Multiplizierer Problem.}
+\scalebox{0.82}{
+\begin{tabular}{ |l|l|r||r|r|r|r|r|r|}
+\hline
+\scriptsize \textbf{Knoten} & \scriptsize \textbf{Algorithmus} & \scriptsize \textbf{Mutations} & \scriptsize \textbf{min} & \scriptsize \textbf{unteres} & \scriptsize \textbf{Median} & \scriptsize \textbf{oberes} & \scriptsize \textbf{max} & \scriptsize \textbf{erfolgreiche} \\
+& & \scriptsize  \textbf{rate} & \scriptsize  \textbf{}  & \scriptsize \textbf{quartil}& \scriptsize  \textbf{}& \scriptsize  \textbf{quartil} & \scriptsize  \textbf{} & \scriptsize  \textbf{Durchläufe} \\ \hline
+
+
+  \multirow{ 7 }{*}{50}  
+   & traditionelle Mutation & 0.01 & 431968 & 1719044 & 2875706 & 4622349 & 9788671 & 57 \\
+   & single active gene mutation & 1 & 1266243 & 2289996 & 3097329 & 3721428 & 4195482 & 4 \\ 
+   & single active gene mutation & 2 & 1785404 & 2051025 & 2316645 & 2582266 & 2847886 & 2 \\
+   & single active gene mutation & 3 & NA & NA & NA & NA & NA & 0 \\
+   & single active gene mutation & 4 & NA & NA & NA & NA & NA & 0 \\
+   & partial active gene mutation & 0.01 & 1786115 & 2666488 & 4087698 & 6435972 & 7990053 & 7 \\
+   & partial active gene mutation & 0.03 & NA & NA & NA & NA & NA & 0 \\
+      \hline
+   
+  \multirow{ 7 }{*}{100}  
+   & traditionelle Mutation & 0.01 & 135643 & 504087.8 & 937019.0 & 1549036.2 & 7013110 & 60 \\
+   & single active gene mutation & 1 & 141354 & 691599.8 & 2038621.0 & 3361744.2 & 5805518 & 18 \\ 
+   & single active gene mutation & 2 & 1145640 & 2523350.0 & 4237568.0 & 7490687.0 & 9588978 & 19 \\
+   & single active gene mutation & 3 & 4673171 & 5605263.0 & 6882593.0 & 8804816.0 & 9943430 & 7 \\
+   & single active gene mutation & 4 & 201543 & 602876.2 & 841131.5 & 2179561.5 & 5603055 & 18 \\
+   & partial active gene mutation & 0.01 & 536027 & 863463.0 & 1269341.0 & 1883979.0 & 4157641 & 15 \\
+   & partial active gene mutation & 0.03 & NA & NA & NA & NA & NA & 0 \\
+      \hline
+   
+  \multirow{ 7 }{*}{200}  
+   & traditionelle Mutation & 0.01 & 223306 & 562212.5 & 856224.5 & 1365357.0 & 4225565 & 60 \\
+   & single active gene mutation & 1 & 122220 & 310125.5 & 768310.0 & 1357256.0 & 9492150 & 31 \\ 
+   & single active gene mutation & 2 & 143617 & 445965.2 & 1255046.0 & 2519122.2 & 5680812 & 28 \\
+   & single active gene mutation & 3 & 521841 & 970334.0 & 2112416.0 & 4470282.0 & 7662831 & 25 \\
+   & single active gene mutation & 4 & 679818 & 2490560.0 & 4034151.0 & 6226977.0 & 9930660 & 23 \\
+   & partial active gene mutation & 0.01 & 229360 & 881457.5 & 1502186.0 & 2195214.0 & 9242970 & 23 \\
+   & partial active gene mutation & 0.03 & NA & NA & NA & NA & NA & 0 \\
+      \hline
+   
+  \multirow{ 7 }{*}{500}  
+   & traditionelle Mutation & 0.01 & 58731 & 447144.0 & 647578.5 & 1132215.8 & 4596187 & 60 \\
+   & single active gene mutation & 1 & 128550 & 294074.8 & 466417.0 & 1122317.2 & 7015353 & 44 \\ 
+   & single active gene mutation & 2 & 139483 & 315436.5 & 539040.0 & 1351385.5 & 8099228 & 51 \\
+   & single active gene mutation & 3 & 300118 & 804610.0 & 1539596.0 & 2742555.0 & 7488389 & 44 \\
+   & single active gene mutation & 4 & 494177 & 1188102.0 & 1902067.0 & 2874906.0 & 5920928 & 40 \\
+   & partial active gene mutation & 0.01 & 536027 & 863463.0 & 1269341.0 & 1883979.0 & 4157641 & 46 \\
+   & partial active gene mutation & 0.03 & NA & NA & NA & NA & NA & 0 \\
+      \hline
+   
+  \multirow{ 7 }{*}{1000}  
+   & traditionelle Mutation & 0.01 & 188176 & 463056.2 & 920585.0 & 1501029.8 & 2301688 & 60 \\
+   & single active gene mutation & 1 & 103586 & 185947.8 & 373487.0 & 634736.8 & 6670319 & 52 \\ 
+   & single active gene mutation & 2 & 92791 & 342256.2 & 516886.5 & 845090.2 & 5247156 & 52 \\
+   & single active gene mutation & 3 & 145699 & 598128.5 & 1348047.0 & 2530826.0 & 5416870 & 51 \\
+   & single active gene mutation & 4 & 299218 & 907879.0 & 1697263.0 & 2984646.0 & 8961237 & 53 \\
+   & partial active gene mutation & 0.01 & 236670 & 715287.5 & 1217716.5 & 2358767.0 & 4697031 & 52 \\
+   & partial active gene mutation & 0.03 & NA & NA & NA & NA & NA & 0 \\
+      \hline
+\end{tabular}
+}
+\label{table_meta3}
+\end{table}
+
+\section{Diskussion}
+
+
+die 'single active gene mutation' hat eindeutige Vorteile, beim lösen des Paritätsproblem bewiesen. Auch wenn anzunehmen ist, dass bei einem kleineren Graphen eine kleinere Mutationsrate effektiver ist, lies sich das für 'single active gene mutation' auf dem Paritätsproblem nicht erkennen (Bsp. Figur 2). Dies gilt jedoch nicht für das 3-Bit-Multiplizierer Problem, hier konnten viele Durchläufe nicht unter 10000000 Generationen zu einem angemessenen Ergebnis kommen. Hierbei war vor allem die Anzahl der Knoten im Graphen relevant, wobei erst ab 500 Knoten knapp zwei-drittel der Jobs und bei 1000 Knoten über 50 von 60 Jobs vor 10000000 Generationen beendet werden konnten. Somit war der traditionelle Algorithmus der einzige, welcher in jedem Job rechtzeitig beendet hat. Setzt man jedoch die fehlenden Durchläufe auf 10000000, so gibt es dennoch einige Konfigurationen, bei denen die 'single active gene mutation' besser abgeschnitten hat als der traditionelle Algorithmus. 
+
+Dies ist besonders interessant, wenn man diesen Algorithmus mit dem aus 
+%[reducing wasted evaluations in cartesian genetic programming von brian w goldman und william f punch] 
+vergleicht, diese hatten einen ähnlichen Mutationsalgorithmus, welcher ebenfalls genau ein aktiven knoten mutiert hat, allerdings auch eine Mutationswahrscheinlichkeit genutzt hat um nicht aktive knoten zu mutieren. Bei ihnen war der traditionelle Algorithmus auf dem Paritätsproblem ungefähr gleich gut, teilweise sogar besser, allerdings war der traditionelle Algorithmus auf dem Multiplizierer Problem deutlich schlechter als ihre Variante der 'single active gene mutation'. 
+
+
+die 'partial active gene mutation' hatte auf dem 3-Bit-Multiplizierer ähnliche Probleme wie die 'single active gene mutation', konnte jedoch bei den Paritätsproblemen nicht so gut abschneiden. Somit scheint die 'single active gene mutation' bei einer wachsenden Anzahl aktiver knoten kein problem damit zu haben, dass die Anzahl der Mutationen gleich bleibt, während die menge auf der mutiert wird potenziell steigt oder sinkt. Im Gegenteil scheint das sogar (zumindest bei dem Paritätsproblem) etwas gutes zu sein. 
+
+\subsection{Analyse der Hypothese}
+
+Das Resultat zeigt, dass 'single active gene mutation' dem traditionellen Mutationsalgorithmus nicht in allen Bereichen überlegen ist. Da die 'partial active gene mutation' für das Paritätsproblem besser als der traditionelle Algorithmus, bei beiden problem jedoch schlechter als 'single active gene mutation' funktionierte, ist naheliegend, dass 'single active gene mutation' kein problem mit einer fluktuierenden Menge aktive Knoten hat. 
+
+Auffällig ist jedoch, dass trotz der nicht beendeten Durchläufe bei 1000 Knoten im Graphen die Versuche mit ;utationsraten von einem und zwei knoten genauso gut bzw. bessere Median und Quartile haben, wie der traditionelle Algorithmus. ein denkbarer Grund wäre, dass für das multiplizierer problem geringe Mutationsraten bessere erfolge bringen. Da die Idee hinter single active mutation ist, dass sich bei jeder Mutation der Phenotyp ändert, kann nicht weniger als ein aktiver knoten mutieren, wodurch die Mindestmutationsrate bei Graphen mit einer kleinen Anzahl knoten automatisch sehr hoch ist.
+
+
+\hspace*{-2.0cm}	\includegraphics[scale=0.5]{parity5plotzoomed}
+	
+%Ein Graph $\Graph$ ist ein Tupel $(V,E)$ mit $E \subseteq V \times V$~\cite{Di06}.

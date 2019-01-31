@@ -1,0 +1,26 @@
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation und Hintergrund}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Aufbau der Arbeit}{1}{section.1.2}
+\contentsline {chapter}{\numberline {2}Grundlagen}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Mutationsalgorithmen}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}traditioneller Mutationsalgorithmus}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}single active gene mutation}{4}{subsection.2.1.2}
+\contentsline {subsubsection}{partial active gene mutation}{5}{section*.3}
+\contentsline {section}{\numberline {2.2}Probleme}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Parit\IeC {\"a}t}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}3-Bit-Multiplizierer}{6}{subsection.2.2.2}
+\contentsline {chapter}{\numberline {3}Versuche}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Versuchskonfiguration}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Ergebnisse f\IeC {\"u}r das Parit\IeC {\"a}tsproblem}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Ergebnisse f\IeC {\"u}r den 3-Bit-Multiplizierer}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Diskussion}{10}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Analyse der Hypothese}{11}{subsection.3.4.1}
+\contentsline {chapter}{\numberline {4}Zusammenfassung und Ausblick}{13}{chapter.4}
+\contentsline {chapter}{\numberline {A}Weitere Informationen}{15}{appendix.A}
+\contentsline {chapter}{Abbildungsverzeichnis}{17}{appendix*.7}
+\contentsline {chapter}{Algorithmenverzeichnis}{19}{appendix*.8}
+\contentsline {chapter}{Symbolverzeichnis}{21}{section*.9}
+\contentsline {chapter}{Literaturverzeichnis}{23}{section*.9}
+\contentsline {chapter}{Eidesstattliche Versicherung}{23}{section*.9}

@@ -1,0 +1,89 @@
+ %main.tex
+
+
+\documentclass[a4paper,11pt,twoside,ngerman,color]{book}
+\input{options/header}
+
+ % Seitenraender %
+\geometry{left=3.5cm,right=2.5cm,bottom=3.5cm,top=3cm}
+
+% Algorithmen
+\usepackage[plain,chapter]{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{graphicx}
+%\usepackage{algpseudocode}
+
+% Tabellen
+%\usepackage{booktabs}  % Statt \hline kann \toprule, \midrule und \bottomrule verwendet werden.
+%\usepackage{multirow} % provides a construction for table cells that span more than one row
+%\usepackage{multicol} % allows switching between one and multicolumn format on the same page
+
+\input{options/theoremOptions}
+\input{options/algorithmOptions}
+%\input{options/pseudoCodeOptions}
+\input{options/customCommands}
+\input{options/symbols}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% HIER eigene Angaben ERGÄNZEN:
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\input{options/title}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\begin{document}
+% Titelseite
+\include{kapitel/titelseite}
+\blankpage
+%\include{chapters/titelseite_innen}
+%\blankpage
+
+\pagenumbering{roman}
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+
+% Kapitel
+\include{kapitel/einleitung}
+\include{kapitel/grundlagen}
+\include{kapitel/fazit}
+
+% Anhang (optional)
+\appendix
+\include{kapitel/anhang}
+
+%Abbildungsverzeichnis
+\listoffigures
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\cleardoublepage
+
+% Algorithmenverzeichnis
+\listofalgorithms
+\addcontentsline{toc}{chapter}{Algorithmenverzeichnis}
+\cleardoublepage
+
+% Symbolverzeichnis (optional)
+\renewcommand{\symheadingname}{Symbolverzeichnis}
+\listofsymbols
+\addcontentsline{toc}{chapter}{Symbolverzeichnis}
+\cleardoublepage
+
+% Literaturverzeichnis
+\bibliographystyle{gerplain}
+\bibliography{options/literatur}
+\addcontentsline{toc}{chapter}{\bibname}
+
+% Erklaerung
+\thispagestyle{myheadings}
+%\markboth{}{ERKLÄRUNG}
+%\addcontentsline{toc}{chapter}{Erklärung}
+\markboth{}{EIDESSTATTLICHE VERSICHERUNG}
+\addcontentsline{toc}{chapter}{Eidesstattliche Versicherung}
+\include{kapitel/erklaerung}
+\cleardoublepage
+
+\end{document}
+% EOF

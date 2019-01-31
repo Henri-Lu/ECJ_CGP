@@ -1,0 +1,42 @@
+% theoremOptions.tex
+
+% Theorem-Optionen %
+\theoremseparator{.}
+\theoremstyle{change}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{satz}[theorem]{Satz}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{korollar}[theorem]{Korollar}
+\newtheorem{proposition}[theorem]{Proposition}
+% Ohne Numerierung
+\theoremstyle{nonumberplain}
+\renewtheorem{theorem*}{Theorem}
+\renewtheorem{satz*}{Satz}
+\renewtheorem{lemma*}{Lemma}
+\renewtheorem{korollar*}{Korollar}
+\renewtheorem{proposition*}{Proposition}
+% Definitionen mit \upshape
+\theorembodyfont{\upshape}
+\theoremstyle{change}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{nonumberplain}
+\renewtheorem{definition*}{Definition}
+% Kursive Schrift
+\theoremheaderfont{\itshape}
+\newtheorem{notation}{Notation}
+\newtheorem{konvention}{Konvention}
+\newtheorem{bezeichnung}{Bezeichnung}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{beweis}{Beweis}
+\theoremsymbol{}
+\theoremstyle{change}
+\theoremheaderfont{\bfseries}
+\newtheorem{bemerkung}[theorem]{Bemerkung}
+\newtheorem{beobachtung}[theorem]{Beobachtung}
+\newtheorem{beispiel}[theorem]{Beispiel}
+\newtheorem{problem}{Problem}
+\theoremstyle{nonumberplain}
+\renewtheorem{bemerkung*}{Bemerkung}
+\renewtheorem{beispiel*}{Beispiel}
+\renewtheorem{problem*}{Problem}
+%EOF

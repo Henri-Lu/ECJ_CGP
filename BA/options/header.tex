@@ -1,0 +1,85 @@
+% header.tex
+
+% Korrekte Darstellung der Umlaute (language and fonts)
+\usepackage[T1]{fontenc} % T1-Fonts are better
+\usepackage{lmodern} % Eine etwas angenehmere Font
+\usepackage[utf8]{inputenc} % nutzt UTF8, bitte was sonst
+\usepackage[main=ngerman]{babel} % Übersetze einige Literate auf Deutsch
+
+% Math and theoretical computer science symboles/fonts
+\usepackage{amsmath}  % American Math Society Packete: general
+\usepackage{amsfonts} % American Math Society Packete: more fonts
+\usepackage{amssymb}  % American Math Society Packete: more symbols
+%\usepackage{amsthm}  % American Math Society Packete: typesetting theorems  %%% in conflict with ntheorem!!!
+\usepackage{stmaryrd} % St Mary Road symbols for theoretical computer science
+\usepackage{dsfont}   % supports the 1-function
+
+% Caption Packet
+\usepackage[margin=0pt,font=small,labelfont=bf]{caption} % cus­tomise the cap­tions in float­ing en­vi­ron­ments
+% Gliederung einstellen
+%\setcounter{secnumdepth}{5}
+%\setcounter{tocdepth}{5}
+
+% citations/ captions/ float­ing en­vi­ron­ments/ links
+\usepackage{cite} % Improved Citation-Handling
+\usepackage[babel,german=quotes,autostyle]{csquotes} % ad­vanced fa­cil­i­ties for in­line and dis­play quo­ta­tions
+\MakeOuterQuote{"}	% for german style quotation marks
+\usepackage{subcaption} % Support for sub-captions (and sub-figures)
+\usepackage{enumerate} % Erweiterte Enumerate-Umgebungen
+\usepackage{wrapfig} % Erlaubt es Text, Graphiken zu umfließen
+\usepackage{lscape}
+\usepackage{rotating}
+%\usepackage{epstopdf}
+\usepackage{float} % Verbesserte floating-objects
+\usepackage{framed} % Umrahmte Abschnitte
+\usepackage[framed,hyperref,amsmath,thmmarks]{ntheorem} % en­hance­ments for the­o­rem-like en­vi­ron­ments
+\usepackage[unicode,pdfmenubar,linktoc=all,hidelinks,bookmarks]{hyperref} % ermöglicht PDF-Verklinkungen
+\usepackage{url} % al­lows line­breaks at cer­tain char­ac­ters in urls/ e-mail adresses/ paths
+\usepackage{multicol} % to use columns with multiple rows
+
+% Abkuerzungen richtig formatieren %
+\usepackage{xspace}
+
+% Euro Symbol
+\usepackage{eurosym}
+
+% Seitenlayout
+\usepackage{geometry} % Beinflusst das Seitenlayout
+\geometry{a4paper} % Papiergroesse
+%%\geometry{top=25mm, inner=25mm, outer=25mm, bottom=25mm, headsep=10mm, footskip=10mm} % Seitenraender
+%%\geometry{left=3.5cm,right=2.5cm,bottom=3.5cm,top=3cm} % Seitenraender
+\usepackage{pdflscape} % Landscape Umgebung für PDF Dokumente: set­ting the page at­tribute /Ro­tate 
+\usepackage[hang]{footmisc}   % Für den Einzug bei Fußnoten
+\setlength{\footnotemargin}{0pt} % Setze den Einzug für die Fußnoten
+\parskip 0pt
+%\parindent 0pt
+
+% Grafiken
+\usepackage[pdftex]{color} % Erweiterter Support für Graphiken
+\usepackage{graphicx}
+%\usepackage{subfigure}
+\usepackage{tikz} % Für LaTeX Graphiken
+\usetikzlibrary{automata,arrows,backgrounds,decorations.markings,decorations.pathmorphing,decorations.pathreplacing,fit,positioning,shadows,shapes,shapes.geometric} % Ein paar nützliche TikZ-Pakete
+
+
+% Bibtex deutsch
+\usepackage{bibgerm}
+
+\usepackage{makeidx} % Index für Schlagwörter
+\makeindex
+
+\usepackage[final]{listofsymbols}  % Symbolverzeichnis
+%\usepackage[draft]{listofsymbols}
+
+
+% Zeilenabstand einstellen %
+\renewcommand{\baselinestretch}{1.25}
+% Floating-Umgebungen anpassen %
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+
+% Keine einzelnen Zeilen beim Anfang eines Abschnitts (Schusterjungen)
+\clubpenalty = 10000
+% Keine einzelnen Zeilen am Ende eines Abschnitts (Hurenkinder)
+\widowpenalty = 10000 \displaywidowpenalty = 10000
+% EOF

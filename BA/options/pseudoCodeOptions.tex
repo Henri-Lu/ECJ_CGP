@@ -1,0 +1,35 @@
+% pseudoCodeOptions.tex
+
+% pseudocode Einstellungen
+\usepackage{listings} % for type­set pro­gram­ming code
+\lstset{
+  language=Java,
+  basicstyle=\ttfamily,
+  commentstyle=\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  columns=fixed,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  backgroundcolor=\color{lightblue},
+  captionpos=b
+}
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+%EOF
