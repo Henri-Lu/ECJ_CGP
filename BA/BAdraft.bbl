@@ -1,0 +1,91 @@
+\begin{thebibliography}{10}
+
+\bibitem{conf/eurogp/GoldmanP13}
+{\sc Goldman, Brian~W.} \btxandlong{}\ {\sc William~F. Punch}: {\em Reducing
+  Wasted Evaluations in Cartesian Genetic Programming}.
+\newblock \Btxinlong{}\ {\sc Krawiec, Krzysztof}, {\sc Alberto Moraglio}, {\sc
+  Ting Hu}, {\sc A.~Sima Etaner-Uyar} \btxandlong{}\ {\sc Bin Hu}\
+  (\btxeditorslong{}): {\em Genetic Programming - 16th European Conference,
+  EuroGP 2013, Vienna, Austria, April 3-5, 2013. Proceedings},
+  \btxvolumelong{}\ 7831 \btxofserieslong{}\ {\em Lecture Notes in Computer
+  Science}, \btxpageslong{}\ 61--72. Springer, 2013.
+
+\bibitem{conf/ki/KaufmannK17}
+{\sc Kaufmann, Paul} \btxandlong{}\ {\sc Roman Kalkreuth}: {\em Parametrizing
+  Cartesian Genetic Programming: An Empirical Study}.
+\newblock \Btxinlong{}\ {\sc Kern-Isberner, Gabriele}, {\sc Johannes
+  Fuernkranz} \btxandlong{}\ {\sc Matthias Thimm}\ (\btxeditorslong{}): {\em KI
+  2017: Advances in Artificial Intelligence - 40th Annual German Conference on
+  AI, Dortmund, Germany, September 25-29, 2017, Proceedings}, \btxvolumelong{}\
+  10505 \btxofserieslong{}\ {\em Lecture Notes in Computer Science},
+  \btxpageslong{}\ 316--322. Springer, 2017.
+
+\bibitem{koza-90}
+{\sc Koza, J.}: {\em Genetic programming: {A} paradigm for genetically breeding
+  populations of computer programs to solve problems}.
+\newblock Technical Report\ {STAN}-{CS}-90-1314, Dept. of Computer Science,
+  Stanford University, \btxmonjunlong{} 1990.
+
+\bibitem{koza:book}
+{\sc Koza, John~R.}: {\em Genetic Programming: On the Programming of Computers
+  by Means of Natural Selection}.
+\newblock MIT Press, Cambridge, MA, USA, 1992.
+
+\bibitem{koza:gp2}
+{\sc Koza, John~R.}: {\em Genetic Programming II: Automatic Discovery of
+  Reusable Programs}.
+\newblock MIT Press, Cambridge Massachusetts, \btxmonmaylong{} 1994.
+
+\bibitem{luke:1997:ccmGP}
+{\sc Luke, Sean} \btxandlong{}\ {\sc Lee Spector}: {\em A Comparison of
+  Crossover and Mutation in Genetic Programming}.
+\newblock \Btxinlong{}\ {\sc Koza, John~R.}, {\sc Kalyanmoy Deb}, {\sc Marco
+  Dorigo}, {\sc David~B. Fogel}, {\sc Max Garzon}, {\sc Hitoshi Iba}
+  \btxandlong{}\ {\sc Rick~L. Riolo}\ (\btxeditorslong{}): {\em Genetic
+  Programming 1997: Proceedings of the Second Annual Conference},
+  \btxpageslong{}\ 240--248, Stanford University, CA, USA, 13-16
+  \btxmonjullong{} 1997. Morgan Kaufmann.
+
+\bibitem{luke:1998:rcxmGP}
+{\sc Luke, Sean} \btxandlong{}\ {\sc Lee Spector}: {\em A Revised Comparison of
+  Crossover and Mutation in Genetic Programming}.
+\newblock \Btxinlong{}\ {\sc Koza, John~R.}, {\sc Wolfgang Banzhaf}, {\sc Kumar
+  Chellapilla}, {\sc Kalyanmoy Deb}, {\sc Marco Dorigo}, {\sc David~B. Fogel},
+  {\sc Max~H. Garzon}, {\sc David~E. Goldberg}, {\sc Hitoshi Iba}
+  \btxandlong{}\ {\sc Rick Riolo}\ (\btxeditorslong{}): {\em Genetic
+  Programming 1998: Proceedings of the Third Annual Conference},
+  \btxpageslong{}\ 208--213, University of Wisconsin, Madison, Wisconsin, USA,
+  22-25 \btxmonjullong{} 1998. Morgan Kaufmann.
+
+\bibitem{miller:1999:ACGP}
+{\sc Miller, Julian~F.}: {\em An empirical study of the efficiency of learning
+  boolean functions using a Cartesian Genetic Programming approach}.
+\newblock \Btxinlong{}\ {\sc Banzhaf, Wolfgang}, {\sc Jason Daida}, {\sc
+  Agoston~E. Eiben}, {\sc Max~H. Garzon}, {\sc Vasant Honavar}, {\sc Mark
+  Jakiela} \btxandlong{}\ {\sc Robert~E. Smith}\ (\btxeditorslong{}): {\em
+  Proceedings of the Genetic and Evolutionary Computation Conference},
+  \btxvolumelong{}~2, \btxpageslong{}\ 1135--1142, Orlando, Florida, USA, 13-17
+  \btxmonjullong{} 1999. Morgan Kaufmann.
+
+\bibitem{journals/tec/MillerS06}
+{\sc Miller, Julian~F.} \btxandlong{}\ {\sc Stephen~L. Smith}: {\em Redundancy
+  and Computational Efficiency in Cartesian Genetic Programming}.
+\newblock IEEE Trans. Evolutionary Computation, 10(2):167--174, 2006.
+
+\bibitem{miller:2000:CGP}
+{\sc Miller, Julian~F.} \btxandlong{}\ {\sc Peter Thomson}: {\em Cartesian
+  Genetic Programming}.
+\newblock \Btxinlong{}\ {\sc Poli, Riccardo}, {\sc Wolfgang Banzhaf}, {\sc
+  William~B. Langdon}, {\sc Julian~F. Miller}, {\sc Peter Nordin}
+  \btxandlong{}\ {\sc Terence~C. Fogarty}\ (\btxeditorslong{}): {\em Genetic
+  Programming, Proceedings of EuroGP'2000}, \btxvolumelong{}\ 1802
+  \btxofserieslong{}\ {\em LNCS}, \btxpageslong{}\ 121--132, Edinburgh, 15-16
+  \btxmonaprlong{} 2000. Springer-Verlag.
+
+\bibitem{oai:generic.eprints.org:55371}
+{\sc White, D.~R.} \btxandlong{}\ {\sc S.~Poulding}: {\em A rigorous evaluation
+  of crossover and mutation in genetic programming}.
+\newblock Lecture Notes in Computer Science, \btxpageslong{}\ 220--231.
+  Springer Verlag, \btxmonaprlong{} 2009.
+
+\end{thebibliography}

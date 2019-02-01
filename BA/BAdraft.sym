@@ -1,7 +1,2 @@
-\printsymline{\mathds{N}}{\mathds{N}}{symnz}{Menge aller nat"urlichen Zahlen ohne die Null}{1}
-\printsymline{\mathds{N}_{0}}{\mathds{N}_{0}}{symnzmn}{Menge aller nat"urlichen Zahlen einschlie"slich Null}{1}
-\printsymline{\mathds{Z}}{\mathds{Z}}{GZ}{Menge aller ganzen Zahlen}{1}
-\printsymline{\mathds{Q}}{\mathds{Q}}{RatZ}{Menge aller rationalen Zahlen}{1}
-\printsymline{\mathds{R}}{\mathds{R}}{RZ}{Menge aller reellen Zahlen}{1}
-\printsymline{\mathds{R}^2}{\mathds{R}^2}{RE}{euklidische Ebene}{1}
-\printsymline{G}{G}{Graph}{Graph}{1}
+\printsymline{\lambda}{\lambda}{lam}{lambda}{3}
+\printsymline{\mu}{\mu}{my}{my}{3}

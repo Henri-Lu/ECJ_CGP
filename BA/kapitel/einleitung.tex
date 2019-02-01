@@ -2,21 +2,19 @@
 \chapter{Einleitung}
 \label{cha:einleitung}
 
-Künstliche Intelligenz hat in den letzten Jahren immer mehr an Bedeutung gewonnen und mit ihm Themen wie neuronalen Netzwerke, Evolutionary Programming (EP) und Genetic Programming (GP). Diese Bachelorarbeit befasst sich mit Cartesian Genetic Programming (CGP), eine von Miller et al. 
-%[miller_thomson_2000] 
-eingeführte neue Form des GP die anstelle eines Baumes einen gerichteten azyklischen Graphen als repräsentative Datenstruktur nutzt.
+Künstliche Intelligenz hat in den letzten Jahren immer mehr an Bedeutung gewonnen und mit ihr Themen wie neuronale Netzwerke, Evolutionary Programming (EP) und Genetic Programming (GP). 
+Diese Bachelorarbeit befasst sich mit Cartesian Genetic Programming (CGP), eine von Miller et al. \cite{miller:2000:CGP} eingeführte neue Form des GP die anstelle eines Baumes einen gerichteten azyklischen Graphen als repräsentative Datenstruktur nutzt.
 
 
 \section{Motivation und Hintergrund}
 \label{sec:motivation_und_hintergrund}
 
-Seit dem Vorstellen von CGP im Jahr 2000, hat sich an seiner Optimierung nicht viel getan. 
-Daher möchte untersucht diese Bachelorarbeit einen neuen Mutationsalgorithmus, die 'single active gene mutation', den Julian F. Miller im Gespräch mit meinem Betreuer Roman Kalkreuth geäußert hat. 
+Seit dem Vorstellen von CGP im Jahr 2000, hat sich an seiner Optimierung nicht viel verändert. 
+Daher untersucht diese Bachelorarbeit einen neuen Mutationsalgorithmus, die 'single active gene mutation', den Julian F. Miller im Gespräch mit meinem Betreuer Roman Kalkreuth vorgestellt hat. 
 In einem CGP sind ein Großteil der Knoten nicht aktiv, also nicht relevant für die Ausgabe des Graphen, können aber durch Mutationen aktiviert werden. 
-Das führt dazu das Großteil der Mutationen auf nicht aktiven Knoten stattfindet, welche die Ausgabe nicht direkt unmittelbar beeinflussen. 
-Daher hat Miller die Theorie aufgestellt, dass das zu unnötigen Auswertungen führt, da Graphen verglichen werden, die eine identische Ausgabe haben
-%[Redundancy and Computational Efﬁciency in Cartesian Genetic Programming Julian F. Miller and Stephen L. Smith]
-. 
+Das führt dazu, dass ein Großteil der Mutationen auf nicht aktiven Knoten stattfindet, welche die Ausgabe nicht direkt unmittelbar beeinflussen. 
+Daher haben Miller et al. die Theorie aufgestellt, dass das zu unnötigen Auswertungen führt, da Graphen verglichen werden, die eine identische Ausgabe haben
+\cite{journals/tec/MillerS06}. 
 Der Mutationsalgorithmus soll diese Problematik lösen, indem er sich auf den aktiven Teil des Graphen konzentriert, eine genau Erklärung des Algorithmus folgt später. 
 
 
@@ -25,7 +23,7 @@ Der Mutationsalgorithmus soll diese Problematik lösen, indem er sich auf den ak
 \section{Aufbau der Arbeit}
 \label{sec:aufbau}
 
-Im Rahmen dieser Bachelorarbeit soll ein neuer Mutationsalgorithmus in Java implementiert und untersucht und mit dem traditionellen Mutationsalgorithmus verglichen werden.Hierzu werden mehrere Konfigurationen und Variationen des Algorithmus, neben dem traditionellen Algorithmus, auf zwei Problemen getestet. Das Ziel der Arbeit ist es, herauszufinden wie gut 'single active gene mutation' im Verhältnis zum traditionellen Algorithmus abschneidet und bei diesem Vergleich abzuschätzen, wie sehr die unnötigen Auswertungen ins Gewicht fallen.
+Im Rahmen dieser Bachelorarbeit soll ein neuer Mutationsalgorithmus in Java implementiert, untersucht und mit dem traditionellen Mutationsalgorithmus verglichen werden. Hierzu werden, neben dem traditionellen Algorithmus, mehrere Konfigurationen und Variationen des Algorithmus auf zwei Problemstellungen getestet. Das Ziel der Arbeit ist es, herauszufinden, wie gut 'single active gene mutation' im Verhältnis zum traditionellen Algorithmus abschneidet und bei diesem Vergleich abzuschätzen, wie sehr die unnötigen Auswertungen ins Gewicht fallen.
 
 
-In dem ersten Kapitel der Arbeit wird das Thema vorgestellt, hierfür werden Motivation, Hintergrund und Ziel der Arbeit erläutert. Das zweite Kapitel beschäftigt sich mit den Grundlagen, dabei werden die notwendigen Algorithmen und Problemstellungen beschrieben. Kapitel drei beschäftigt sich mit den Versuchen, wobei es die Versuchskonfiguration, die Ergebnisse der Versuche sortiert nach Problemen und eine anschließende Diskussion der Ergebnisse enthält. Das letzte Kapitel enthält eine Zusammenfassung der Arbeit, sowie einen Ausblick auf Fragen die durch diese Bachelorarbeit aufgeworfen wurden und nicht behandelt werden konnten.
+In dem ersten Kapitel der Arbeit wird das Thema vorgestellt. Hierfür werden Motivation, Hintergrund und Ziel der Arbeit erläutert. Das zweite Kapitel beschäftigt sich mit den Grundlagen. Dabei werden die notwendigen Algorithmen und Problemstellungen beschrieben. Kapitel drei beschäftigt sich mit den Versuchen. Es enthält dabei die Versuchskonfiguration, die Ergebnisse der Versuche sortiert nach Problemen und eine anschließende Diskussion der Ergebnisse. Das letzte Kapitel enthält eine Zusammenfassung der Arbeit, sowie einen Ausblick auf Fragen die durch diese Bachelorarbeit aufgeworfen wurden und nicht behandelt werden konnten.

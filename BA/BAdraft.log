@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.6.4)  30 JAN 2019 12:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.6.4)  1 FEB 2019 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1014,20 +1014,25 @@ nment
 \@float@every@algorithm=\toks61
 \c@algorithm=\count164
 )
-(c:/texlive/2018/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count165
-\c@ALC@line=\count166
-\c@ALC@rem=\count167
-\c@ALC@depth=\count168
-\ALC@tlm=\skip69
-\algorithmicindent=\skip70
-)
-(c:/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
+(c:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count165
+\c@ALG@rem=\count166
+\c@ALG@nested=\count167
+\ALG@tlm=\skip69
+\ALG@thistlm=\skip70
+\c@ALG@Lnr=\count168
+\c@ALG@blocknr=\count169
+\c@ALG@storecount=\count170
+\c@ALG@tmpcounter=\count171
+\ALG@tmplength=\skip71
+) (c:/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip71
-\multirow@cntb=\count169
-\multirow@dima=\skip72
+\multirow@colwidth=\skip72
+\multirow@cntb=\count172
+\multirow@dima=\skip73
 \bigstrutjot=\dimen268
 )
 (c:/texlive/2018/texmf-dist/tex/latex/tools/tabularx.sty
@@ -1039,8 +1044,8 @@ Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
 \ar@mcellbox=\box93
 \extrarowheight=\dimen270
 \NC@list=\toks62
-\extratabsurround=\skip73
-\backup@length=\skip74
+\extratabsurround=\skip74
+\backup@length=\skip75
 \ar@cellbox=\box94
 )
 \TX@col@width=\dimen271
@@ -1048,76 +1053,80 @@ Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
 \TX@old@col=\dimen273
 \TX@target=\dimen274
 \TX@delta=\dimen275
-\TX@cols=\count170
+\TX@cols=\count173
 \TX@ftn=\toks63
 )
 (c:/texlive/2018/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box95
 )
-(./options/theoremOptions.tex
-\c@currtheoremctr=\count171
-\c@endtheoremctr=\count172
-\c@theorem=\count173
-\c@currsatzctr=\count174
-\c@endsatzctr=\count175
-\c@currlemmactr=\count176
-\c@endlemmactr=\count177
-\c@currkorollarctr=\count178
-\c@endkorollarctr=\count179
-\c@currpropositionctr=\count180
-\c@endpropositionctr=\count181
-\c@currtheorem*ctr=\count182
-\c@endtheorem*ctr=\count183
-\c@theorem*=\count184
-\c@currsatz*ctr=\count185
-\c@endsatz*ctr=\count186
-\c@satz*=\count187
-\c@currlemma*ctr=\count188
-\c@endlemma*ctr=\count189
-\c@lemma*=\count190
-\c@currkorollar*ctr=\count191
-\c@endkorollar*ctr=\count192
-\c@korollar*=\count193
-\c@currproposition*ctr=\count194
-\c@endproposition*ctr=\count195
-\c@proposition*=\count196
-\c@currdefinitionctr=\count197
-\c@enddefinitionctr=\count198
-\c@currdefinition*ctr=\count199
-\c@enddefinition*ctr=\count266
-\c@definition*=\count267
-\c@currnotationctr=\count268
-\c@endnotationctr=\count269
-\c@notation=\count270
-\c@currkonventionctr=\count271
-\c@endkonventionctr=\count272
-\c@konvention=\count273
-\c@currbezeichnungctr=\count274
-\c@endbezeichnungctr=\count275
-\c@bezeichnung=\count276
-\c@currbeweisctr=\count277
-\c@endbeweisctr=\count278
-\c@beweis=\count279
-\c@currbemerkungctr=\count280
-\c@endbemerkungctr=\count281
-\c@currbeobachtungctr=\count282
-\c@endbeobachtungctr=\count283
-\c@currbeispielctr=\count284
-\c@endbeispielctr=\count285
-\c@currproblemctr=\count286
-\c@endproblemctr=\count287
-\c@problem=\count288
-\c@currbemerkung*ctr=\count289
-\c@endbemerkung*ctr=\count290
-\c@bemerkung*=\count291
-\c@currbeispiel*ctr=\count292
-\c@endbeispiel*ctr=\count293
-\c@beispiel*=\count294
-\c@currproblem*ctr=\count295
-\c@endproblem*ctr=\count296
+(c:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (./options/theoremOptions.tex
+\c@currtheoremctr=\count174
+\c@endtheoremctr=\count175
+\c@theorem=\count176
+\c@currsatzctr=\count177
+\c@endsatzctr=\count178
+\c@currlemmactr=\count179
+\c@endlemmactr=\count180
+\c@currkorollarctr=\count181
+\c@endkorollarctr=\count182
+\c@currpropositionctr=\count183
+\c@endpropositionctr=\count184
+\c@currtheorem*ctr=\count185
+\c@endtheorem*ctr=\count186
+\c@theorem*=\count187
+\c@currsatz*ctr=\count188
+\c@endsatz*ctr=\count189
+\c@satz*=\count190
+\c@currlemma*ctr=\count191
+\c@endlemma*ctr=\count192
+\c@lemma*=\count193
+\c@currkorollar*ctr=\count194
+\c@endkorollar*ctr=\count195
+\c@korollar*=\count196
+\c@currproposition*ctr=\count197
+\c@endproposition*ctr=\count198
+\c@proposition*=\count199
+\c@currdefinitionctr=\count266
+\c@enddefinitionctr=\count267
+\c@currdefinition*ctr=\count268
+\c@enddefinition*ctr=\count269
+\c@definition*=\count270
+\c@currnotationctr=\count271
+\c@endnotationctr=\count272
+\c@notation=\count273
+\c@currkonventionctr=\count274
+\c@endkonventionctr=\count275
+\c@konvention=\count276
+\c@currbezeichnungctr=\count277
+\c@endbezeichnungctr=\count278
+\c@bezeichnung=\count279
+\c@currbeweisctr=\count280
+\c@endbeweisctr=\count281
+\c@beweis=\count282
+\c@currbemerkungctr=\count283
+\c@endbemerkungctr=\count284
+\c@currbeobachtungctr=\count285
+\c@endbeobachtungctr=\count286
+\c@currbeispielctr=\count287
+\c@endbeispielctr=\count288
+\c@currproblemctr=\count289
+\c@endproblemctr=\count290
+\c@problem=\count291
+\c@currbemerkung*ctr=\count292
+\c@endbemerkung*ctr=\count293
+\c@bemerkung*=\count294
+\c@currbeispiel*ctr=\count295
+\c@endbeispiel*ctr=\count296
+\c@beispiel*=\count297
+\c@currproblem*ctr=\count298
+\c@endproblem*ctr=\count299
 )
-\c@problem*=\count297
+\c@problem*=\count300
  (./options/algorithmOptions.tex)
 (./options/customCommands.tex
 (c:/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -1126,107 +1135,107 @@ Package: expl3 2018-06-01 L3 programming layer (loader)
 
 (c:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2018-06-01 L3 programming layer (code)
-\c_max_int=\count298
-\l_tmpa_int=\count299
-\l_tmpb_int=\count300
-\g_tmpa_int=\count301
-\g_tmpb_int=\count302
-\g__kernel_prg_map_int=\count303
-\c_log_iow=\count304
-\l_iow_line_count_int=\count305
-\l__iow_line_target_int=\count306
-\l__iow_one_indent_int=\count307
-\l__iow_indent_int=\count308
+\c_max_int=\count301
+\l_tmpa_int=\count302
+\l_tmpb_int=\count303
+\g_tmpa_int=\count304
+\g_tmpb_int=\count305
+\g__kernel_prg_map_int=\count306
+\c_log_iow=\count307
+\l_iow_line_count_int=\count308
+\l__iow_line_target_int=\count309
+\l__iow_one_indent_int=\count310
+\l__iow_indent_int=\count311
 \c_zero_dim=\dimen276
 \c_max_dim=\dimen277
 \l_tmpa_dim=\dimen278
 \l_tmpb_dim=\dimen279
 \g_tmpa_dim=\dimen280
 \g_tmpb_dim=\dimen281
-\c_zero_skip=\skip75
-\c_max_skip=\skip76
-\l_tmpa_skip=\skip77
-\l_tmpb_skip=\skip78
-\g_tmpa_skip=\skip79
-\g_tmpb_skip=\skip80
+\c_zero_skip=\skip76
+\c_max_skip=\skip77
+\l_tmpa_skip=\skip78
+\l_tmpb_skip=\skip79
+\g_tmpa_skip=\skip80
+\g_tmpb_skip=\skip81
 \c_zero_muskip=\muskip12
 \c_max_muskip=\muskip13
 \l_tmpa_muskip=\muskip14
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-\l_keys_choice_int=\count309
-\l__intarray_loop_int=\count310
+\l_keys_choice_int=\count312
+\l__intarray_loop_int=\count313
 \c__intarray_sp_dim=\dimen282
-\g__intarray_font_int=\count311
-\c__fp_leading_shift_int=\count312
-\c__fp_middle_shift_int=\count313
-\c__fp_trailing_shift_int=\count314
-\c__fp_big_leading_shift_int=\count315
-\c__fp_big_middle_shift_int=\count316
-\c__fp_big_trailing_shift_int=\count317
-\c__fp_Bigg_leading_shift_int=\count318
-\c__fp_Bigg_middle_shift_int=\count319
-\c__fp_Bigg_trailing_shift_int=\count320
-\c__kernel_randint_max_int=\count321
-\g__fp_array_int=\count322
-\l__fp_array_loop_int=\count323
-\l__sort_length_int=\count324
-\l__sort_min_int=\count325
-\l__sort_top_int=\count326
-\l__sort_max_int=\count327
-\l__sort_true_max_int=\count328
-\l__sort_block_int=\count329
-\l__sort_begin_int=\count330
-\l__sort_end_int=\count331
-\l__sort_A_int=\count332
-\l__sort_B_int=\count333
-\l__sort_C_int=\count334
-\l__tl_analysis_normal_int=\count335
-\l__tl_analysis_index_int=\count336
-\l__tl_analysis_nesting_int=\count337
-\l__tl_analysis_type_int=\count338
-\l__regex_internal_a_int=\count339
-\l__regex_internal_b_int=\count340
-\l__regex_internal_c_int=\count341
-\l__regex_balance_int=\count342
-\l__regex_group_level_int=\count343
-\l__regex_mode_int=\count344
-\c__regex_cs_in_class_mode_int=\count345
-\c__regex_cs_mode_int=\count346
-\l__regex_catcodes_int=\count347
-\l__regex_default_catcodes_int=\count348
-\c__regex_catcode_D_int=\count349
-\c__regex_catcode_S_int=\count350
-\c__regex_catcode_L_int=\count351
-\c__regex_catcode_O_int=\count352
-\c__regex_catcode_A_int=\count353
-\c__regex_all_catcodes_int=\count354
-\l__regex_show_lines_int=\count355
-\l__regex_min_state_int=\count356
-\l__regex_max_state_int=\count357
-\l__regex_left_state_int=\count358
-\l__regex_right_state_int=\count359
-\l__regex_capturing_group_int=\count360
-\l__regex_min_pos_int=\count361
-\l__regex_max_pos_int=\count362
-\l__regex_curr_pos_int=\count363
-\l__regex_start_pos_int=\count364
-\l__regex_success_pos_int=\count365
-\l__regex_curr_char_int=\count366
-\l__regex_curr_catcode_int=\count367
-\l__regex_last_char_int=\count368
-\l__regex_case_changed_char_int=\count369
-\l__regex_curr_state_int=\count370
-\l__regex_step_int=\count371
-\l__regex_min_active_int=\count372
-\l__regex_max_active_int=\count373
-\l__regex_replacement_csnames_int=\count374
-\l__regex_match_count_int=\count375
-\l__regex_min_submatch_int=\count376
-\l__regex_submatch_int=\count377
-\l__regex_zeroth_submatch_int=\count378
-\g__regex_trace_regex_int=\count379
+\g__intarray_font_int=\count314
+\c__fp_leading_shift_int=\count315
+\c__fp_middle_shift_int=\count316
+\c__fp_trailing_shift_int=\count317
+\c__fp_big_leading_shift_int=\count318
+\c__fp_big_middle_shift_int=\count319
+\c__fp_big_trailing_shift_int=\count320
+\c__fp_Bigg_leading_shift_int=\count321
+\c__fp_Bigg_middle_shift_int=\count322
+\c__fp_Bigg_trailing_shift_int=\count323
+\c__kernel_randint_max_int=\count324
+\g__fp_array_int=\count325
+\l__fp_array_loop_int=\count326
+\l__sort_length_int=\count327
+\l__sort_min_int=\count328
+\l__sort_top_int=\count329
+\l__sort_max_int=\count330
+\l__sort_true_max_int=\count331
+\l__sort_block_int=\count332
+\l__sort_begin_int=\count333
+\l__sort_end_int=\count334
+\l__sort_A_int=\count335
+\l__sort_B_int=\count336
+\l__sort_C_int=\count337
+\l__tl_analysis_normal_int=\count338
+\l__tl_analysis_index_int=\count339
+\l__tl_analysis_nesting_int=\count340
+\l__tl_analysis_type_int=\count341
+\l__regex_internal_a_int=\count342
+\l__regex_internal_b_int=\count343
+\l__regex_internal_c_int=\count344
+\l__regex_balance_int=\count345
+\l__regex_group_level_int=\count346
+\l__regex_mode_int=\count347
+\c__regex_cs_in_class_mode_int=\count348
+\c__regex_cs_mode_int=\count349
+\l__regex_catcodes_int=\count350
+\l__regex_default_catcodes_int=\count351
+\c__regex_catcode_D_int=\count352
+\c__regex_catcode_S_int=\count353
+\c__regex_catcode_L_int=\count354
+\c__regex_catcode_O_int=\count355
+\c__regex_catcode_A_int=\count356
+\c__regex_all_catcodes_int=\count357
+\l__regex_show_lines_int=\count358
+\l__regex_min_state_int=\count359
+\l__regex_max_state_int=\count360
+\l__regex_left_state_int=\count361
+\l__regex_right_state_int=\count362
+\l__regex_capturing_group_int=\count363
+\l__regex_min_pos_int=\count364
+\l__regex_max_pos_int=\count365
+\l__regex_curr_pos_int=\count366
+\l__regex_start_pos_int=\count367
+\l__regex_success_pos_int=\count368
+\l__regex_curr_char_int=\count369
+\l__regex_curr_catcode_int=\count370
+\l__regex_last_char_int=\count371
+\l__regex_case_changed_char_int=\count372
+\l__regex_curr_state_int=\count373
+\l__regex_step_int=\count374
+\l__regex_min_active_int=\count375
+\l__regex_max_active_int=\count376
+\l__regex_replacement_csnames_int=\count377
+\l__regex_match_count_int=\count378
+\l__regex_min_submatch_int=\count379
+\l__regex_submatch_int=\count380
+\l__regex_zeroth_submatch_int=\count381
+\g__regex_trace_regex_int=\count382
 \c_empty_box=\box96
 \l_tmpa_box=\box97
 \l_tmpb_box=\box98
@@ -1268,19 +1277,19 @@ Package: expl3 2018-06-01 L3 programming layer (code)
 \l__coffin_top_corner_dim=\dimen305
 \l__coffin_scaled_total_height_dim=\dimen306
 \l__coffin_scaled_width_dim=\dimen307
-\l__seq_internal_a_int=\count380
-\l__seq_internal_b_int=\count381
+\l__seq_internal_a_int=\count383
+\l__seq_internal_b_int=\count384
 )
 (c:/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2018-06-01 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count382
+\l__driver_color_stack_int=\count385
 ))
 Package: xparse 2018-05-12 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count383
-\g__xparse_grabber_int=\count384
-\l__xparse_m_args_int=\count385
-\l__xparse_mandatory_args_int=\count386
-\l__xparse_v_nesting_int=\count387
+\l__xparse_current_arg_int=\count386
+\g__xparse_grabber_int=\count387
+\l__xparse_m_args_int=\count388
+\l__xparse_mandatory_args_int=\count389
+\l__xparse_v_nesting_int=\count390
 ))
 (./options/symbols.tex
 \@sym=\write5
@@ -1305,7 +1314,16 @@ LaTeX Warning: Label `table_meta3' multiply defined.
 
 LaTeX Warning: Label `table_meta3' multiply defined.
 
-) (./kapitel/fazit.aux) (./kapitel/anhang.aux) (./kapitel/erklaerung.aux))
+
+LaTeX Warning: Label `table_meta3' multiply defined.
+
+
+LaTeX Warning: Label `table_meta3' multiply defined.
+
+
+LaTeX Warning: Label `table_meta3' multiply defined.
+
+) (./kapitel/fazit.aux) (./kapitel/erklaerung.aux))
 \openout1 = `BAdraft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -1340,16 +1358,16 @@ Package csquotes Info: Redefining character " on input line 37.
 
 (c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count388
+\scratchcounter=\count391
 \scratchdimen=\dimen308
 \scratchbox=\box111
-\nofMPsegments=\count389
-\nofMParguments=\count390
+\nofMPsegments=\count392
+\nofMParguments=\count393
 \everyMPshowfont=\toks64
-\MPscratchCnt=\count391
+\MPscratchCnt=\count394
 \MPscratchDim=\dimen309
-\MPnumerator=\count392
-\makeMPintoPDFobject=\count393
+\MPnumerator=\count395
+\makeMPintoPDFobject=\count396
 \everyMPtoPDFconversion=\toks65
 ) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1377,7 +1395,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count394
+\c@section@level=\count397
 )
 LaTeX Info: Redefining \ref on input line 37.
 LaTeX Info: Redefining \pageref on input line 37.
@@ -1429,12 +1447,12 @@ bibgerm.sty: babel.sty detected
 \openout2 = `kapitel/titelseite.aux'.
 
 (./kapitel/titelseite.tex
-\links=\skip81
+\links=\skip82
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 5.
  (c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<bilder/tulogo-rgb.pdf, id=121, 339.2675pt x 55.20625pt>
+<bilder/tulogo-rgb.pdf, id=122, 339.2675pt x 55.20625pt>
 File: bilder/tulogo-rgb.pdf Graphic file (type pdf)
 <use bilder/tulogo-rgb.pdf>
 Package pdftex.def Info: bilder/tulogo-rgb.pdf  used on input line 10.
@@ -1549,27 +1567,27 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 9.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 9.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 23.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 25.
+(babel)             in language  on input line 23.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 29.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 I
-      n dem ersten Kapitel der Arbeit wird das Thema vorgestellt, hierfür w...
+l.29 I
+      n dem ersten Kapitel der Arbeit wird das Thema vorgestellt. Hierfür w...
 [1
 
 
@@ -1591,84 +1609,60 @@ l.50 \include{kapitel/einleitung}
 \openout2 = `kapitel/grundlagen.aux'.
 
  (./kapitel/grundlagen.tex
-\c@claims=\count395
-\c@hypothesises=\count396
-\c@currmyclaimctr=\count397
-\c@endmyclaimctr=\count398
-\c@currhypothesisctr=\count399
-\c@endhypothesisctr=\count400
+\c@claims=\count398
+\c@hypothesises=\count399
+\c@currmyclaimctr=\count400
+\c@endmyclaimctr=\count401
+\c@currhypothesisctr=\count402
+\c@endhypothesisctr=\count403
 
 Kapitel 2.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 10.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 10.
-<cgpExample.png, id=201, 1400.98407pt x 855.94781pt>
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 13.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 13.
+\@sym=\write9
+\openout9 = `BAdraft.sym'.
+
+\@sub=\write10
+\openout10 = `BAdraft.sub'.
+
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 33.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 33.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 33.
+<cgpExample.png, id=215, 1400.98407pt x 855.94781pt>
 File: cgpExample.png Graphic file (type png)
 <use cgpExample.png>
-Package pdftex.def Info: cgpExample.png  used on input line 28.
+Package pdftex.def Info: cgpExample.png  used on input line 55.
 (pdftex.def)             Requested size: 420.29846pt x 256.78632pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 32.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 60.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 65.
  [3
 
 
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 41.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 41.
-
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 45.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 45.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 45.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 45.
- [4 <./cgpExample.png>]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 53.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 53.
-
-
-LaTeX Warning: Citation `miller:1999:ACGP' on page 5 undefined on input line 55
-.
-
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 57.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 57.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 62.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 62.
-
-Underfull \vbox (badness 1735) has occurred while \output is active []
-
-Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 65.
@@ -1676,104 +1670,245 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 65.
+
+[4 <./cgpExample.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 85.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 85.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 91.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 91.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 91.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 91.
  [5]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 101.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 107.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 107.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 111.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 111.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 111.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 111.
+ [6]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 112.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 112.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 112.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 112.
+ [7]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 112.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 112.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 112.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 112.
+ [8
 
-[6]
+]
 Kapitel 3.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 112.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 112.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 69.
+(babel)             in language  on input line 115.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 69.
+(babel)             in language  on input line 115.
 
-Overfull \hbox (0.68413pt too wide) in paragraph at lines 71--72
+Overfull \hbox (0.68413pt too wide) in paragraph at lines 117--118
 \T1/lmr/m/n/10.95 Zur Ver-suchs-durch-f�h-rung nut-zen wir zwei bool-sche Pro-b
 le-me ge-nutzt, 3-Bit-Multiplizierer
  []
 
 Package hyperref Info: bookmark level for unknown hypothesis defaults to 0 on i
-nput line 76.
+nput line 122.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 115.
+(babel)             in language  on input line 161.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 115.
+(babel)             in language  on input line 161.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 115.
+(babel)             in language  on input line 161.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 115.
-[7
+(babel)             in language  on input line 161.
+[9]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 163.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 163.
 
-]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 117.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 117.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 194.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 194.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 197.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 197.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 197.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 197.
- [8]
-Overfull \hbox (64.69394pt too wide) in paragraph at lines 258--260
+Overfull \hbox (7.58688pt too wide) in paragraph at lines 297--299
+ [][] 
+ []
+
+
+Overfull \hbox (21.05548pt too wide) in paragraph at lines 363--365
+ [][] 
+ []
+
+
+Overfull \hbox (5.09273pt too wide) in paragraph at lines 389--391
  [][] 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 395.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 395.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 266.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 266.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 266.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 266.
-[9]
+(babel)             in language  on input line 398.
+[10]
+Overfull \hbox (64.69394pt too wide) in paragraph at lines 459--461
+ [][] 
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 266.
+(babel)             in language  on input line 463.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 266.
+(babel)             in language  on input line 463.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 266.
+(babel)             in language  on input line 463.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 266.
- [10]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 274.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 274.
-<parity5plotzoomed.png, id=244, 1065.9825pt x 1171.37625pt>
+(babel)             in language  on input line 463.
+[11]
+<parity4plotzoomed.png, id=276, 1065.9825pt x 1292.57906pt>
+File: parity4plotzoomed.png Graphic file (type png)
+<use parity4plotzoomed.png>
+Package pdftex.def Info: parity4plotzoomed.png  used on input line 465.
+(pdftex.def)             Requested size: 532.98994pt x 646.28795pt.
+
+Overfull \hbox (106.1986pt too wide) in paragraph at lines 465--466
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 11.184pt on input line 467.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<parity5plotzoomed.png, id=277, 1065.9825pt x 1292.57906pt>
 File: parity5plotzoomed.png Graphic file (type png)
 <use parity5plotzoomed.png>
-Package pdftex.def Info: parity5plotzoomed.png  used on input line 281.
-(pdftex.def)             Requested size: 532.98994pt x 585.68669pt.
+Package pdftex.def Info: parity5plotzoomed.png  used on input line 470.
+(pdftex.def)             Requested size: 532.98994pt x 646.28795pt.
 
-Overfull \hbox (68.72643pt too wide) in paragraph at lines 281--282
+Overfull \hbox (51.72643pt too wide) in paragraph at lines 470--471
 []|  [] 
  []
 
+
+LaTeX Warning: Float too large for page by 11.184pt on input line 472.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<parity6plotzoomed.png, id=278, 1065.9825pt x 1292.57906pt>
+File: parity6plotzoomed.png Graphic file (type png)
+<use parity6plotzoomed.png>
+Package pdftex.def Info: parity6plotzoomed.png  used on input line 475.
+(pdftex.def)             Requested size: 532.98994pt x 646.28795pt.
+
+Overfull \hbox (106.1986pt too wide) in paragraph at lines 475--476
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 11.184pt on input line 477.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<parity7plotzoomed.png, id=279, 1065.9825pt x 1292.57906pt>
+File: parity7plotzoomed.png Graphic file (type png)
+<use parity7plotzoomed.png>
+Package pdftex.def Info: parity7plotzoomed.png  used on input line 480.
+(pdftex.def)             Requested size: 532.98994pt x 646.28795pt.
+
+Overfull \hbox (51.72643pt too wide) in paragraph at lines 480--481
+[]|  [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 11.184pt on input line 482.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<mul3plotzoomed.png, id=280, 1065.9825pt x 1292.57906pt>
+File: mul3plotzoomed.png Graphic file (type png)
+<use mul3plotzoomed.png>
+Package pdftex.def Info: mul3plotzoomed.png  used on input line 486.
+(pdftex.def)             Requested size: 532.98994pt x 646.28795pt.
+
+Overfull \hbox (106.1986pt too wide) in paragraph at lines 486--487
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 11.184pt on input line 488.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 490.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 490.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 494.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 494.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 494.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 494.
+[12]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 495.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 495.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 495.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 495.
+ [13]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 502.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 502.
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5288) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 51.
@@ -1783,7 +1918,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 51.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 51.
- [11]
+ [14]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 51.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1793,10 +1928,56 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 51.
 
-[12 <./parity5plotzoomed.png>]
+[15]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+ [16 <./parity4plotzoomed.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+ [17 <./parity5plotzoomed.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+ [18 <./parity6plotzoomed.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+ [19 <./parity7plotzoomed.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 51.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 51.
+ [20 <./mul3plotzoomed.png>]
 \openout2 = `kapitel/fazit.aux'.
 
- (./kapitel/fazit.tex
+
+(./kapitel/fazit.tex
 Kapitel 4.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
@@ -1811,42 +1992,11 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 52.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 52.
- [13
+ [21
 
 
 
 ]
-\openout2 = `kapitel/anhang.aux'.
-
- (./kapitel/anhang.tex
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
- [14
-
-
-
-]
-Anhang A.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
-)
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 56.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 56.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 56.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 56.
- [15]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 59.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1855,12 +2005,12 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 59.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 59.
- [16
+ [22
 
 
 ] (./BAdraft.lof)
-\tf@lof=\write9
-\openout9 = `BAdraft.lof'.
+\tf@lof=\write11
+\openout11 = `BAdraft.lof'.
 
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 60.
@@ -1874,7 +2024,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 61.
- [17]
+ [23]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1883,11 +2033,11 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 61.
- [18
+ [24
 
 ] (./BAdraft.loa)
-\tf@loa=\write10
-\openout10 = `BAdraft.loa'.
+\tf@loa=\write12
+\openout12 = `BAdraft.loa'.
 
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 65.
@@ -1901,7 +2051,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 66.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 66.
- [19
+ [25
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
@@ -1912,23 +2062,13 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 66.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 66.
- [20
+ [26
 
 ] (./BAdraft.syc) (./BAdraft.sym
-Package listofsymbols Info: symbol/subscript symnz has no or empty description 
-or is not used: omitted on input line 1.
-Package listofsymbols Info: symbol/subscript symnzmn has no or empty descriptio
-n or is not used: omitted on input line 2.
-Package listofsymbols Info: symbol/subscript GZ has no or empty description or 
-is not used: omitted on input line 3.
-Package listofsymbols Info: symbol/subscript RatZ has no or empty description o
-r is not used: omitted on input line 4.
-Package listofsymbols Info: symbol/subscript RZ has no or empty description or 
-is not used: omitted on input line 5.
-Package listofsymbols Info: symbol/subscript RE has no or empty description or 
-is not used: omitted on input line 6.
-Package listofsymbols Info: symbol/subscript Graph has no or empty description 
-or is not used: omitted on input line 7.
+Package listofsymbols Info: symbol/subscript lam has no or empty description or
+ is not used: omitted on input line 1.
+Package listofsymbols Info: symbol/subscript my has no or empty description or 
+is not used: omitted on input line 2.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 71.
@@ -1942,7 +2082,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 72.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 72.
- [21]
+ [27]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 72.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1951,10 +2091,20 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 72.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 72.
- [22
+ [28
 
-]
-No file BAdraft.bbl.
+] (./BAdraft.bbl
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 59.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 59.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 59.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 59.
+ [29
+
+])
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1963,9 +2113,18 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 84.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 84.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 85.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 85.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 85.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 85.
+ [30]
 \openout2 = `kapitel/erklaerung.aux'.
 
-(./kapitel/erklaerung.tex)
+ (./kapitel/erklaerung.tex)
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 85.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1974,7 +2133,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 85.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 85.
- [23
+[31
 
 
 ]
@@ -1986,66 +2145,60 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 86.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 86.
- [24
+ [32
 
 
 ]
-\tf@thm=\write11
-\openout11 = `BAdraft.thm'.
+\tf@thm=\write13
+\openout13 = `BAdraft.thm'.
 
-\@syc=\write12
-\openout12 = `BAdraft.syc'.
+\@syc=\write14
+\openout14 = `BAdraft.syc'.
 
  (./BAdraft.sym)
-\@suc=\write13
-\openout13 = `BAdraft.suc'.
+\@suc=\write15
+\openout15 = `BAdraft.suc'.
 
  (./BAdraft.sub)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
-
-(./BAdraft.aux (./kapitel/titelseite.aux) (./kapitel/einleitung.aux)
-(./kapitel/grundlagen.aux) (./kapitel/fazit.aux) (./kapitel/anhang.aux)
-(./kapitel/erklaerung.aux))
+ (./BAdraft.aux
+(./kapitel/titelseite.aux) (./kapitel/einleitung.aux) (./kapitel/grundlagen.aux
+) (./kapitel/fazit.aux) (./kapitel/erklaerung.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
-
-
-Package rerunfilecheck Warning: File `BAdraft.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `BAdraft.out':
-(rerunfilecheck)             Before: 0C3A32D9DF918EE4D049F91E403FE110;3573
-(rerunfilecheck)             After:  5804444B2D4807C11135B1BD53CA438C;3611.
-
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Info: File `BAdraft.out' has not changed.
+(rerunfilecheck)             Checksum: 2B43618CFE538D31A080AE67B1526315;3753.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37017 strings out of 492647
- 700620 string characters out of 6133341
- 821253 words of memory out of 5000000
- 40204 multiletter control sequences out of 15000+600000
- 618210 words of font info for 84 fonts, out of 8000000 for 9000
+ 37492 strings out of 492647
+ 707812 string characters out of 6133341
+ 866450 words of memory out of 5000000
+ 40632 multiletter control sequences out of 15000+600000
+ 639679 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,14n,82p,1119b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,14n,82p,1119b,521s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2018/tex
-mf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2018/texmf-dist/fonts/type
-1/public/eurosym/feymr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/
-lmbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex
-live/2018/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2018/texmf-dis
-t/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
-ic/lm/lmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c
-:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2018/tex
-mf-dist/fonts/type1/public/lm/lmss12.pfb>
-Output written on BAdraft.pdf (28 pages, 509909 bytes).
+mf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2018/texmf-dist/fonts/enc/
+dvips/lm/lm-mathit.enc}<c:/texlive/2018/texmf-dist/fonts/type1/public/eurosym/f
+eymr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/lm/lmcsc10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi10.pfb>
+<c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2018/te
+xmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/public/lm/lmri10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmro10.
+pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/20
+18/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2018/texmf-dist/font
+s/type1/public/lm/lmsy10.pfb>
+Output written on BAdraft.pdf (36 pages, 1435990 bytes).
 PDF statistics:
- 352 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 308 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 464 PDF objects out of 1000 (max. 8388607)
+ 386 compressed objects within 4 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 328 words of extra memory for PDF output out of 10000 (max. 10000000)
 
